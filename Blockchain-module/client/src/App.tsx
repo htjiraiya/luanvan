@@ -10,6 +10,7 @@ import TransactionDetails from './components/layouts/TransactionDetails/Transact
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
