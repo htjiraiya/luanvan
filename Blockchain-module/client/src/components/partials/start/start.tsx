@@ -1,11 +1,11 @@
 import React from 'react';
 
-function NotFound() {
+const start = () => {
     return (
         <div>
-            Not f
+            start
         </div>
     );
-}
+};
 
-export default NotFound;
+export default start;
