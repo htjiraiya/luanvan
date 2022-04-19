@@ -1,11 +1,11 @@
 import React from 'react';
 
-function NotFound() {
+const products = () => {
     return (
         <div>
-            Not f
+            products
         </div>
     );
-}
+};
 
-export default NotFound;
+export default products;

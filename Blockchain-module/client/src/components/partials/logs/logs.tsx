@@ -1,11 +1,11 @@
 import React from 'react';
 
-function NotFound() {
+const logs = () => {
     return (
         <div>
-            Not f
+            logs
         </div>
     );
-}
+};
 
-export default NotFound;
+export default logs;
