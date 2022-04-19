@@ -7,6 +7,7 @@ import Main from './components/layouts/Main/Main';
 import NotFound from './components/layouts/NotFound/NotFound';
 import ProductDetails from './components/layouts/ProductDetails/ProductDetails';
 import TransactionDetails from './components/layouts/TransactionDetails/TransactionDetails';
+import SeasonDetail from './components/layouts/SeasonDetail/SeasonDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Main/>}></Route>
           <Route path='/product-details' element={<ProductDetails/>}></Route>
           <Route path='/transaction-details' element={<TransactionDetails/>}></Route>
+          <Route path='/season-details' element={<SeasonDetail/>}/>
           <Route path='*' element={<NotFound/>}></Route>
         </Routes>
       </BrowserRouter>
