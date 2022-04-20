@@ -1,0 +1,13 @@
+.custom-table {
+    display: block;
+
+    .custom-row {
+        display: block;
+        width: 100%;
+        
+        .custom-column {
+            display: inline-block;
+            height: 100%;
+        }
+    }
+}

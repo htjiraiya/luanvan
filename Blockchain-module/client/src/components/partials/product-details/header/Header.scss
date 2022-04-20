@@ -1,0 +1,24 @@
+.product-header {
+    margin-top: 3rem;
+    p {
+        width: 100%;
+        text-align: center;
+    }
+    .name {
+        font-size: 5rem;
+        font-weight: bold;
+        color: #444444;
+        text-transform: uppercase;
+    }
+    .number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #444444;
+    }
+    .status {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #444444;
+        text-transform: uppercase;
+    }
+}

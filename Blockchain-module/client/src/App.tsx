@@ -6,7 +6,7 @@ import Main from './components/layouts/Main/Main';
 import NotFound from './components/layouts/NotFound/NotFound';
 import ProductDetails from './components/layouts/ProductDetails/ProductDetails';
 import TransactionDetails from './components/layouts/TransactionDetails/TransactionDetails';
-import SeasonDetails from './components/layouts/SeasonDetail/SeasonDetail';
+import SeasonDetails from './components/layouts/SeasonDetails/SeasonDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
