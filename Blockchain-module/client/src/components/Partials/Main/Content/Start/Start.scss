@@ -1,0 +1,17 @@
+.start {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .introduction {
+        width: 30rem;
+
+        .img-logo {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    }
+}

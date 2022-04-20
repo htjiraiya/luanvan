@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import $ from 'jquery';
-
+import { updateShowMenu } from '../../../../Redux/Actions/Menu';
 import './Menu.scss';
 
 const Menu = () => {
     //--------------------other-------------------//
     const navigate = useNavigate();
+
+    //-------------------redux--------------------//
+    const dispatch = useDispatch();
 
     //--------------------state-------------------//
     const [active, setActive] = useState<boolean[]>([false, false, false, false, false]);
@@ -88,6 +92,11 @@ const Menu = () => {
     const handleHideMenu = () => {
         const isHide = hideMenu;
         setHideMenu(!isHide);
+
+        if (($(window).width() as number) > 820) {
+            const updateShowMenuAction = updateShowMenu(!isHide);
+            dispatch(updateShowMenuAction);
+        }
     }
 
     //----------------jquery--------------------//
@@ -96,6 +105,8 @@ const Menu = () => {
             setHideMenu(true);
         } else {
             setHideMenu(false)
+            const updateShowMenuAction = updateShowMenu(false);
+            dispatch(updateShowMenuAction);
         }
     });
 
