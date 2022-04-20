@@ -1,11 +1,11 @@
 import React from 'react';
 
-const logs = () => {
+const Procedures = () => {
     return (
         <div>
-            logs
+            Procedure
         </div>
     );
 };
 
-export default logs;
+export default Procedures;
