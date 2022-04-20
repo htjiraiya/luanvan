@@ -1,0 +1,47 @@
+.transaction-verify {
+
+    p {
+        width: 100%;
+        text-align: center;
+    }
+    .name {
+        font-size: 5rem;
+        font-weight: bold;
+        color: #444444;
+        text-transform: uppercase;
+    }
+    .number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #444444;
+    }
+    .status {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #444444;
+        text-transform: uppercase;
+    }
+
+    .verify {
+        width: 80%;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem 0;
+        border-bottom: .15rem solid #dddddd;
+        .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .time {
+            font-size: 1.25rem;
+        }
+
+        .sign {
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+}

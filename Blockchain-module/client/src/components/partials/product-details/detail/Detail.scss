@@ -1,0 +1,82 @@
+.product-detail {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 8rem;
+    border-top: .15rem solid #cecece;
+    padding-top: 3rem;
+
+    > .title {
+        width: 100%;
+        text-align: center;
+        height: 4rem;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .generate {
+
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 3.5rem 3.5rem 3.5rem;
+        margin-top: 3rem;
+
+        >p {
+            font-size: 1.5rem;
+            text-align: center;
+
+            span {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .agric-material {
+        .material-table {
+            width: 80%;
+            margin: 2rem auto;
+            border: 0 !important;
+
+            .row {
+                height: 4rem;
+                border-bottom: .15rem solid #cecece;
+
+                .column {
+                    width: 24%;
+                    line-height: 4rem;
+                    text-align: center !important;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .transaction-info {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        .transaction-info-elm {
+            margin: 0 10rem;
+            p {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .name {
+                font-size: 1.75rem;
+                font-weight: bold;
+            }
+
+            .address, .phone, .email {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

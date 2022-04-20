@@ -1,7 +1,29 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
