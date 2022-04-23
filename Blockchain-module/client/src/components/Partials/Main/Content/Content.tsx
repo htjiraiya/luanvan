@@ -8,7 +8,7 @@ import Procedures from './Procedures/Procedures';
 import Products from './Products/Products';
 import Profile from './Profile/Profile';
 import Start from './Start/Start';
-import Transactions from '../Transactions/Transactions';
+import Transactions from './Transactions/Transactions';
 
 const Content = () => {
     //-----Redux-----//

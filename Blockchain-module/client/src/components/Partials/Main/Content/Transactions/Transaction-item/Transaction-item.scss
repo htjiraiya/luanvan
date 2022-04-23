@@ -1,0 +1,58 @@
+.transaction-item {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-color: #c8c8c8 !important;
+
+    .content-table {
+        font-weight: bold;
+    }
+
+    .stt-content {
+        width: 2rem;
+    }
+
+    .no-transaction-content {
+        width: 10rem;
+    }
+
+    .name-product-content {
+        width: 15rem;
+    }
+
+    .date-transaction-content {
+        width: 10rem;
+    }
+
+    .status-content {
+        width: 7rem;
+    }
+
+    .control-content {
+        width: 7rem;
+    }
+}
+
+.main-container {
+    .row-start {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-top: 1px solid;
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    .row-between {
+        border-top: 1px solid;
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    .row-end {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 1px solid;
+    }
+}

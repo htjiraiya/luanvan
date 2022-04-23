@@ -1,0 +1,32 @@
+.log-item {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-color: #c8c8c8 !important;
+
+    .content-table {
+        font-weight: bold;
+    }
+
+    .stt-content {
+        width: 2rem;
+    }
+
+    .name-season-content {
+        width: 15rem;
+    }
+
+    .date-season-content {
+        width: 7rem;
+    }
+
+    .status-content {
+        width: 7rem;
+    }
+
+    .control-content {
+        width: 7rem;
+    }
+}

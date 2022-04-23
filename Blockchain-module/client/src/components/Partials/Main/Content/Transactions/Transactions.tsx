@@ -1,8 +1,8 @@
 import React from 'react';
-import LogItem from './Log-item/Log-item';
-import "./Logs.scss";
+import TransactionItem from './Transaction-item/Transaction-item';
+import "./Transactions.scss";
 
-const Logs = () => {
+const Transactions = () => {
     return (
         <div className='main-container center'>
             <br />
@@ -12,11 +12,14 @@ const Logs = () => {
                 <div className="stt title-table text-center">
                     STT
                 </div>
-                <div className="name-season title-table text-center">
-                    Tên vụ mùa
+                <div className="no-transaction title-table text-center">
+                    Số giao dịch
                 </div>
-                <div className="date-season title-table text-center">
-                    Thời gian
+                <div className="name-product title-table text-center">
+                    Tên lô hàng
+                </div>
+                <div className="date-transaction title-table text-center">
+                    Ngày giao dịch
                 </div>
                 <div className="status title-table text-center">
                     Trạng thái
@@ -25,11 +28,11 @@ const Logs = () => {
                     Hành động
                 </div>
             </div>
-            <LogItem itemPosition='row-start'/>
-            <LogItem itemPosition='row-between'/>
-            <LogItem itemPosition='row-end'/>
+            <TransactionItem itemPosition='row-start'/>
+            <TransactionItem itemPosition='row-between'/>
+            <TransactionItem itemPosition='row-end'/>
         </div>
     );
 };
 
-export default Logs;
+export default Transactions;
