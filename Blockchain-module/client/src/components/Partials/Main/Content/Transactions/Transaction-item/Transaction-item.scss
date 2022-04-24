@@ -56,3 +56,28 @@
         border: 1px solid;
     }
 }
+
+
+@media screen and (max-width: 900px) {
+    .transaction-item {
+        .date-transaction-content {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .transaction-item {
+        .status-content {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .transaction-item {
+        .no-transaction-content {
+            display: none;
+        }
+    }
+}

@@ -3,3 +3,11 @@
         width: 15rem;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .main-container {
+        .date-season {
+            display: none;
+        }
+    }
+}

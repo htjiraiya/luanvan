@@ -34,3 +34,28 @@
         width: 7rem;
     }
 }
+
+
+@media screen and (max-width: 900px) {
+    .product-item  {
+        .date-product-content {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product-item  {
+        .status-content {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .product-item  {
+        .quantity-product-content {
+            display: none;
+        }
+    }
+}

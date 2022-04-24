@@ -52,3 +52,19 @@
         border: 1px solid;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .procedure-item  {
+        .status-content {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .procedure-item  {
+        .no-procedure-content {
+            display: none;
+        }
+    }
+}

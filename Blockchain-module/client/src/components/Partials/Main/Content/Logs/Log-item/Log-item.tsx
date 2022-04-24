@@ -23,7 +23,7 @@ const LogItem = (props: propsObj) => {
                 Chờ xác nhận
             </div>
             <div className="control-content text-center">
-                <button className='btn btn-primary'>Xem chi tiết</button>
+                <button className='btn btn-primary btn-responsive'>Xem thêm</button>
             </div>
         </div>
     );

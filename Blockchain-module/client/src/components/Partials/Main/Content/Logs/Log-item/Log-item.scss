@@ -30,3 +30,19 @@
         width: 7rem;
     }
 }
+
+@media screen and (max-width: 900px) {
+    .log-item {
+        .date-season-content {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .log-item {
+        .status-content {
+            display: none;
+        }
+    }
+}
