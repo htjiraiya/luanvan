@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Table, Column } from '../../features/table/Table'
+import { Row, Table, Cell } from '../../features/table/Table'
 import './Detail.scss'
 
 function Detail() {
@@ -7,47 +7,49 @@ function Detail() {
         <div className="product-detail">
             <p className="title">Chi tiết</p>
             <div className="generate">
-                <p className="deli-time">
-                    Thời gian giao nhận: <span>4h 22-4-2022</span>
-                </p>
                 <p className="seeds">
                     Giống lúa: <span>Đài thơm 8</span>
                 </p>
-                <p className="deli-place">
-                    Nơi giao nhận: <span>HTX Bình Minh</span>
-                </p>
                 <p className="quantity">
                     Số lượng: <span>100 tấn</span>
-                </p>
-                <p className="produce-place">
-                    Nơi sản xuất: <span>HTX Bình Minh</span>
                 </p>
                 <p className="season">
                     Mùa vụ: <span>Đông-xuân</span>
                     <p className="season-detail">Xem chi tiết mùa vụ</p>
                 </p>
+                <p className="deli-time">
+                    Thời gian giao nhận: <span>4h 22-4-2022</span>
+                </p>
+                <p className="deli-place">
+                    Nơi giao nhận: <span>HTX Bình Minh</span>
+                </p>
+                
+                <p className="produce-place">
+                    Nơi sản xuất: <span>HTX Bình Minh</span>
+                </p>
             </div>
             <div className="agric-material">
+                <p className="agric-material-title">Vật tư nông nghiệp:</p>
                 <Table className="material-table">
                     <Row className="row">
-                        <Column header className="column">STT</Column>
-                        <Column header className="column">Tên vật tư</Column>
-                        <Column header className="column">Số lượng</Column>
-                        <Column header className="column">Đơn giá</Column>
+                        <Cell header className="column">STT</Cell>
+                        <Cell header className="column">Tên vật tư</Cell>
+                        <Cell header className="column">Số lượng</Cell>
+                        <Cell header className="column">Đơn giá</Cell>
                     </Row>
                     
                     <Row className="row">
-                        <Column className="column">1</Column>
-                        <Column className="column">Phân bón</Column>
-                        <Column className="column">10</Column>
-                        <Column className="column">428000</Column>
+                        <Cell className="column">1</Cell>
+                        <Cell className="column">Phân bón</Cell>
+                        <Cell className="column">10</Cell>
+                        <Cell className="column">428000 </Cell>
                     </Row>
 
                     <Row className="row">
-                        <Column className="column">2</Column>
-                        <Column className="column">Thuốc trừ cỏ</Column>
-                        <Column className="column">50</Column>
-                        <Column className="column">300000</Column>
+                        <Cell className="column">2</Cell>
+                        <Cell className="column">Thuốc trừ cỏ</Cell>
+                        <Cell className="column">50</Cell>
+                        <Cell className="column">300000</Cell>
                     </Row>
                 </Table>
             </div>

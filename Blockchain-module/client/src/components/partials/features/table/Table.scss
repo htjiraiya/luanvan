@@ -6,7 +6,9 @@
         width: 100%;
         
         .custom-column {
-            display: inline-block;
+            width: auto;
+            display: inline;
+            float: left;
             height: 100%;
         }
     }

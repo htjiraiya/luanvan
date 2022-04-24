@@ -13,11 +13,11 @@
         width: 100%;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 3.5rem 3.5rem 3.5rem;
+        justify-content: space-around;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 3.5rem 3.5rem;
         > p {
             font-size: 1.5rem;
-            text-align: center;
             span {
                 font-size: 1.5rem;
                 font-weight: bold;
@@ -27,7 +27,7 @@
 
     .cooperation-info {
         width: 80%;
-        margin: 2rem auto;
+        margin: 5rem auto;
         .cooperation-title {
             width: 100%;
             text-align: center;
@@ -52,7 +52,7 @@
     }
     .buyer-info {
         width: 80%;
-        margin: 6rem auto;
+        margin: 3rem auto;
         .buyer-title {
             width: 100%;
             text-align: center;
@@ -78,7 +78,7 @@
 
     .sender-info {
         width: 80%;
-        margin: 6rem auto;
+        margin: 3rem auto;
         .sender-title {
             width: 100%;
             text-align: center;

@@ -23,11 +23,10 @@ function Row({children, className}: Prop) {
     );
 }
 
-function Column({children, className, header}: Prop) {
+function Cell({children, className, header}: Prop) {
 
     const style: React.CSSProperties = {
         fontWeight: header ? 'bold' : 'normal',
-        textAlign: header ? 'center' : 'left',
     }
 
     return (
@@ -40,5 +39,5 @@ function Column({children, className, header}: Prop) {
 export  {
     Table,
     Row,
-    Column
+    Cell
 }

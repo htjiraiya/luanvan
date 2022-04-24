@@ -1,0 +1,26 @@
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    transform: translate(1.5rem, .8rem) scale(1) !important;
+}
+
+.plant-protection {
+    margin-top: 3rem;
+    .plant-protection-title {
+        width: 100%;
+        p {
+            font-size: 1.75rem;
+            font-weight: bold;
+        }
+    }
+
+    .plant-protection-select-form {
+        margin-bottom: 1rem;
+        .plant-protection-select {
+            width: 20rem;
+            height: 3rem;
+        }
+    
+        .select-label {
+            background-color: #ffffff;
+        }
+    }
+}
