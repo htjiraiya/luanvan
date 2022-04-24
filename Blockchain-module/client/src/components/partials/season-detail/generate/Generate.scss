@@ -1,0 +1,78 @@
+.season-generate {
+    width: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    top: 15rem;
+    border-bottom: .15rem solid #cecece;
+    padding-bottom: 4rem;
+    .season-name {
+        font-size: 4rem;
+        font-weight: bold;
+        color: #444444;
+    }
+
+    .season-info-grid {
+        width: 100%;
+        display: grid;
+        margin-top: 4rem;
+        justify-content: space-around;
+        grid-template-areas: 'ga1 ga2 ga4'
+                             'ga5 ga6 ga7'
+                             'ga3 ga3 ga3';
+        * {
+            width: 100%;
+            font-size: 1.25rem;
+            span {
+                font-weight: bold;
+                color: #444444;
+            }
+        }
+
+        .seeds-name {
+            grid-area: ga1;
+            
+        }
+
+        .sowing-date {
+            grid-area: ga2;
+        }
+
+        .sowing-density {
+            grid-area: ga3;
+            .sowing-density-group {
+                display: flex;
+                justify-content: start;
+                flex-wrap: wrap;
+                p:nth-child(odd) {
+                    width: 35%;
+                }
+
+                p:nth-child(even) {
+                    width: 60%;
+                }
+            }
+        }
+
+        .seeds-process {
+            grid-area: ga4;
+        }
+
+        .seeds-method {
+            grid-area: ga5;
+        }
+
+        .avg-pre-season {
+            grid-area: ga6;
+        }
+
+        .season-area {
+            grid-area: ga7;
+        }
+
+    }
+
+}

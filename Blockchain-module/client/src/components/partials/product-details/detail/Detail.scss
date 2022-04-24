@@ -15,17 +15,16 @@
 
     .generate {
 
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 3.5rem 3.5rem 3.5rem;
+        justify-content: space-between;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 5rem 5rem;
         margin-top: 3rem;
 
         >p {
             font-size: 1.5rem;
-            text-align: center;
-
             span {
                 font-size: 1.5rem;
                 font-weight: bold;
@@ -34,15 +33,19 @@
     }
 
     .agric-material {
+
+        .agric-material-title {
+            font-size: 1.5rem;
+        }
+
         .material-table {
-            width: 80%;
+            width: 100%;
             margin: 2rem auto;
             border: 0 !important;
 
             .row {
                 height: 4rem;
                 border-bottom: .15rem solid #cecece;
-
                 .column {
                     width: 24%;
                     line-height: 4rem;
