@@ -6,12 +6,13 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    top: 5rem;
+    top: 15rem;
     border-bottom: .15rem solid #cecece;
     padding-bottom: 4rem;
     .season-name {
         font-size: 4rem;
         font-weight: bold;
+        color: #444444;
     }
 
     .season-info-grid {
@@ -27,6 +28,7 @@
             font-size: 1.25rem;
             span {
                 font-weight: bold;
+                color: #444444;
             }
         }
 

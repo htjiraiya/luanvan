@@ -1,6 +1,7 @@
 import React from 'react'
 import Fertilizer from './fertilizer/Fertilizer'
-import PlantProtection from './plant-protection/PlantProtection';
+import PlantProtection from './plant-protection/PlantProtection'
+import GrowingUp from './growing-up/GrowingUp'
 import './PaddyLogger.scss'
 
 
@@ -11,6 +12,7 @@ function PaddyLogger() {
             <div className="paddy-logger-body">
                 <Fertilizer></Fertilizer>
                 <PlantProtection></PlantProtection>
+                <GrowingUp></GrowingUp>
             </div>
         </div>
     );

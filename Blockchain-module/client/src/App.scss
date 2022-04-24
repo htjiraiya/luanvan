@@ -52,3 +52,27 @@
         font-size: 10px ;
     }
 }
+
+@media screen and (max-width: 900px) {
+    * {
+        font-size: 9px ;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    * {
+        font-size: 8.5px ;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    * {
+        font-size: 8px ;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    * {
+        font-size: 7.5px ;
+    }
+}

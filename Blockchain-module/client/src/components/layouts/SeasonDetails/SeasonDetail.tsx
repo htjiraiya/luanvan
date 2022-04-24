@@ -12,6 +12,11 @@ function SeasonDetail() {
                 <p>Chi tiết mùa vụ</p>
             </div>
             <div className="season-detail-body">
+                <div className="season-image">
+                    <img src="/img/test-img.png" alt="" />
+                    <span></span>
+                </div>
+                <div className="season-content"></div>
                 <Generate></Generate>
                 <PaddyLogger></PaddyLogger>
             </div>
