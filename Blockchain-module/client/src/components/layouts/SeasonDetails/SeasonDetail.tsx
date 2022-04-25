@@ -1,12 +1,12 @@
 import React from 'react'
-import Generate from '../../partials/season-detail/generate/Generate'
-import PaddyLogger from '../../partials/season-detail/paddy-logger/PaddyLogger'
+import Generate from '../../Partials/season-detail/generate/Generate'
+import PaddyLogger from '../../Partials/season-detail/paddy-logger/PaddyLogger'
 import './SeasonDetail.scss'
 
 
 function SeasonDetail() {
     return (
-        <div className="season-detail-wrapper">
+        <div className="season-detail-wrapper responsive-details-page">
             <div className="season-detail-header">
                 <i className="fa-solid fa-chevron-left"></i>
                 <p>Chi tiết mùa vụ</p>

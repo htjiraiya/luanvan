@@ -1,16 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom/client';
+import store from './Redux/Store';
 import './index.scss';
 import App from './App';
-import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 
-
+//const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 const container = document.getElementById('root');
-const root = createRoot(container!); // createRoot(container!) if you use TypeScript
+const root = ReactDOM.createRoot(container!); // createRoot(container!) if you use TypeScript
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
 );
+
 
 
 // If you want to start measuring performance in your app, pass a function
