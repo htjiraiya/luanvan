@@ -1,0 +1,19 @@
+.content-container {
+    width: calc(100% - 25rem);
+    height: 100vh;
+    overflow-y: scroll;
+    margin-left: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .content-container {
+        width: calc(100% - 5rem) !important;
+        position: absolute;
+        right: 0;
+        z-index: 100;
+    }
+}

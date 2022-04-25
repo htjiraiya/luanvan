@@ -1,0 +1,32 @@
+.main-container {
+    .form-profile {
+        width: 30rem;
+        margin: 2rem auto;
+    }
+
+    .input-sex {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .sex-item {
+            margin: 0 1rem;
+        }
+    }
+
+    .input-position {
+        margin: 0.5rem 0;
+
+        label {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .main-container {
+        .form-profile {
+            width: 90%;
+        }
+    }
+}

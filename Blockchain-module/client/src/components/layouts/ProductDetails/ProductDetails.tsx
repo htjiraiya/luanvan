@@ -1,11 +1,11 @@
 import React from 'react';
 import './ProductDetail.scss'
-import Header from '../../partials/product-details/header/Header'
-import Detail from '../../partials/product-details/detail/Detail';
+import Header from '../../Partials/product-details/header/Header'
+import Detail from '../../Partials/product-details/detail/Detail';
 
 function ProductDetails() {
     return (
-        <div className="product-detail-wrapper">
+        <div className="product-detail-wrapper responsive-details-page">
             <div className="product-detail-header">
                 <i className="fa-solid fa-chevron-left"></i>
                 <p>Chi tiết lô hàng</p>

@@ -1,0 +1,9 @@
+@media screen and (max-width: 650px) {
+    .chart-container {
+        overflow-x: scroll;
+
+        .chart-responsive {
+            width: 500px;
+        }
+    }
+}

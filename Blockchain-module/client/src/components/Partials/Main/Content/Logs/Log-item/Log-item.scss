@@ -1,0 +1,48 @@
+.log-item {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-color: #c8c8c8 !important;
+
+    .content-table {
+        font-weight: bold;
+    }
+
+    .stt-content {
+        width: 2rem;
+    }
+
+    .name-season-content {
+        width: 15rem;
+    }
+
+    .date-season-content {
+        width: 7rem;
+    }
+
+    .status-content {
+        width: 7rem;
+    }
+
+    .control-content {
+        width: 7rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .log-item {
+        .date-season-content {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .log-item {
+        .status-content {
+            display: none;
+        }
+    }
+}

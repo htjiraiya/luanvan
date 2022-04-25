@@ -1,11 +1,11 @@
 import React from 'react'
 import './TransactionDetail.scss'
-import Verify from '../../partials/transaction-details/verify/Verify';
-import Description from '../../partials/transaction-details/description/Description'
+import Verify from '../../Partials/transaction-details/verify/Verify';
+import Description from '../../Partials/transaction-details/description/Description'
 
 function TransactionDetails() {
     return (
-        <div className="transaction-detail-wrapper">
+        <div className="transaction-detail-wrapper responsive-details-page">
             <div className="transaction-detail-header">
                 <i className="fa-solid fa-chevron-left"></i>
                 <p>Chi tiết giao dịch</p>

@@ -1,0 +1,17 @@
+.main-container {
+    .no-procedure {
+        width: 10rem;
+    }
+
+    .name-procedure {
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main-container {
+        .no-procedure {
+            display: none;
+        }
+    }
+}
