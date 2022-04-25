@@ -1,0 +1,27 @@
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    transform: translate(1.5rem, .8rem) scale(1) !important;
+}
+
+.growing-up {
+    margin-top: 5rem;
+    .growing-up-title {
+        width: 100%;
+        p {
+            font-size: 1.75rem;
+            font-weight: bold;
+        }
+    }
+
+    .growing-up-select-form {
+        margin-bottom: 1rem;
+        .growing-up-select {
+            width: 20rem;
+            height: 3rem;
+        }
+    
+        .select-label {
+            background-color: #ffffff;
+            //
+        }
+    }
+}
