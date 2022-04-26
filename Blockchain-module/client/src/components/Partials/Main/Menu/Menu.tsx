@@ -144,15 +144,6 @@ const Menu = () => {
                     <span className='text-function'>Giao dịch</span>
                 </div>
             </Link>
-            <Link to='/main/logs' className='text-dark'>
-                <div
-                    className={`item-function ${active[1] ? 'active' : ''}`}
-                    onClick={() => handleClick(1)}
-                >
-                    <i className="fa-solid fa-book custom-icon"></i>
-                    <span className='text-function'>Nhật ký</span>
-                </div>
-            </Link>
             <Link to='/main/products' className='text-dark'>
                 <div
                     className={`item-function ${active[2] ? 'active' : ''}`}
