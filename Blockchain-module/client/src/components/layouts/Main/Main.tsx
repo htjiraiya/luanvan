@@ -1,6 +1,6 @@
 import './Main.scss';
-import Menu from '../../Partials/Main/Menu/Menu';
-import Content from '../../Partials/Main/Content/Content';
+import Menu from '../../partials/Main/Menu/Menu';
+import Content from '../../partials/Main/Content/Content';
 
 
 
