@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Table, Cell } from '../../features/table/Table'
+import { Row, Table, Cell } from '../../../../features/table/Table'
 import './Detail.scss'
 
 function Detail() {

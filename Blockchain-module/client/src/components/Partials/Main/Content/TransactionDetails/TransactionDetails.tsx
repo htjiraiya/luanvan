@@ -1,7 +1,7 @@
 import React from 'react'
 import './TransactionDetail.scss'
-import Verify from '../../Partials/transaction-details/verify/Verify';
-import Description from '../../Partials/transaction-details/description/Description'
+import Verify from './verify/Verify';
+import Description from './description/Description'
 
 function TransactionDetails() {
     return (

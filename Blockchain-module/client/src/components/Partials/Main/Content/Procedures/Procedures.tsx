@@ -7,7 +7,7 @@ const Procedures = () => {
         <div className='main-container center'>
             <br />
             <h1>Quy trình</h1>
-            <button className='btn btn-primary'>Thêm quy trình</button>
+            <br /><br />
             <div className='title-list-transaction'>
                 <div className="stt title-table text-center">
                     STT

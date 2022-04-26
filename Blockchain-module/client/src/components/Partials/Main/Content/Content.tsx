@@ -3,12 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import $ from 'jquery';
 import './Content.scss';
 import Charts from './Charts/Charts';
-import Logs from './Logs/Logs';
 import Procedures from './Procedures/Procedures';
 import Products from './Products/Products';
 import Profile from './Profile/Profile';
 import Start from './Start/Start';
 import Transactions from './Transactions/Transactions';
+import ProductDetails from './ProductDetails/ProductDetails';
+import TransactionDetails from './TransactionDetails/TransactionDetails';
 
 const Content = () => {
     //-----Redux-----//
@@ -27,11 +28,12 @@ const Content = () => {
             <Routes>
                 <Route path='/' element={<Start/>}></Route>
                 <Route path='/transactions' element={<Transactions/>}></Route>
-                <Route path='/logs' element={<Logs/>}></Route>
                 <Route path='/products' element={<Products/>}></Route>
                 <Route path='/procedures' element={<Procedures/>}></Route>
                 <Route path='/charts' element={<Charts/>}></Route>
                 <Route path='/profile' element={<Profile/>}></Route>
+                <Route path='/product-details' element={<ProductDetails/>}></Route>
+                <Route path='/transaction-details' element={<TransactionDetails/>}></Route>
             </Routes>
         </div>
     );
