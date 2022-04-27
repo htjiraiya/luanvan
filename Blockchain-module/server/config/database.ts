@@ -1,5 +1,8 @@
 import mysql from "mysql";
 
+import dotenv from 'dotenv'
+dotenv.config();
+
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT as unknown as number,
@@ -9,6 +12,7 @@ const connection = mysql.createConnection({
 });
 
 const connect = () => {
+    console.log(connection)
     connection.connect((err:any) => {
         if (err) {
             console.log('false connect to database');
