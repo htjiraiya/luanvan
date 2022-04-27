@@ -21,7 +21,7 @@
         height: 7rem;
         display: flex;
         align-items: center;
-        margin-top: 3rem;
+        justify-content: flex-start;
 
         .img-logo-menu {
             width: 80px;
@@ -38,10 +38,9 @@
 
     .logo-menu {
         width: 270px;
-        height: 7rem;
+        height: 5rem;
         display: flex;
         align-items: center;
-
         .icon-menu {
             width: 3rem;
             height: 3rem;
@@ -59,7 +58,7 @@
         }
 
         .text-menu {
-            font-size: 30px;
+            font-size: 25px;
             font-weight: bold;
             letter-spacing: 5px;
         }

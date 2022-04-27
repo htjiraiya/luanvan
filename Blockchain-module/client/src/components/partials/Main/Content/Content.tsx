@@ -10,6 +10,7 @@ import Start from './Start/Start';
 import Transactions from './Transactions/Transactions';
 import ProductDetails from './ProductDetails/ProductDetails';
 import TransactionDetails from './TransactionDetails/TransactionDetails';
+import NotFound from '../../../layouts/NotFound/NotFound';
 
 const Content = () => {
     //-----Redux-----//
@@ -34,6 +35,7 @@ const Content = () => {
                 <Route path='/profile' element={<Profile/>}></Route>
                 <Route path='/product-details' element={<ProductDetails/>}></Route>
                 <Route path='/transaction-details' element={<TransactionDetails/>}></Route>
+                <Route path='*' element={<NotFound/>}></Route>
             </Routes>
         </div>
     );

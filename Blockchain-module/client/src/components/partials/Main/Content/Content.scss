@@ -3,6 +3,7 @@
     height: 100vh;
     overflow-y: scroll;
     margin-left: auto;
+    transition: width .5s;
 }
 
 ::-webkit-scrollbar {

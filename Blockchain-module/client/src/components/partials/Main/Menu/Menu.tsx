@@ -113,7 +113,7 @@ const Menu = () => {
     return (
         <div className={`menu-component ${hideMenu ? 'hide-menu' : ''}`}>
 
-            <div className="logo-app center">
+            <div className="logo-app">
                 <Link to="/main" onClick={clearActive}>
                     <img
                         src="/images/logo/E-Agriculture.png"
@@ -135,6 +135,15 @@ const Menu = () => {
 
                 <span className='text-menu'>MENU</span>
             </div>
+            <Link to='/main/profile' className='text-dark'>
+                <div
+                    className={`item-function ${active[5] ? 'active' : ''}`}
+                    onClick={() => handleClick(5)}
+                >
+                    <i className="fa-solid fa-user custom-icon"></i>
+                    <span className='text-function'>Thông tin chung</span>
+                </div>
+            </Link>
             <Link to='/main/transactions' className='text-dark'>
                 <div
                     className={`item-function ${active[0] ? 'active' : ''}`}
@@ -169,15 +178,6 @@ const Menu = () => {
                 >
                     <i className="fa-solid fa-chart-area custom-icon"></i>
                     <span className='text-function'>Biểu đồ sản lượng lúa</span>
-                </div>
-            </Link>
-            <Link to='/main/profile' className='text-dark'>
-                <div
-                    className={`item-function ${active[5] ? 'active' : ''}`}
-                    onClick={() => handleClick(5)}
-                >
-                    <i className="fa-solid fa-user custom-icon"></i>
-                    <span className='text-function'>Thông tin chung</span>
                 </div>
             </Link>
 
