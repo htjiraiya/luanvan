@@ -7,8 +7,6 @@ import bcrypt from 'bcrypt'
 const login = async (req: Request, res: Response) => {
     const { email, password } = req.body
 
-    console.log(email)
-
     if(!email || !password)
         return res.status(401).json({
             message: 'Tài khoản không được thành lập.'

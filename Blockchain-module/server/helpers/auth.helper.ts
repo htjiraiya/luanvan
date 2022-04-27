@@ -4,7 +4,7 @@ interface User {
     email: string
 }
 
-let createToken = (user: User, token_key: string, expire: string) => {
+let createToken = (user: User, token_key: string, expire: string):Promise<any> => {
     return new Promise((resolve, reject) => {
         jwt.sign(
             { email: user.email },
@@ -22,7 +22,7 @@ let createToken = (user: User, token_key: string, expire: string) => {
     });
 }
 
-let verifyToken = (token: string, token_key: string) => {
+let verifyToken = (token: string, token_key: string): Promise<any> => {
     return new Promise((resolve, reject) => {
         jwt.verify(token, token_key, (error, decoded) => {
             if (error) {
