@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from 'express'
-const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET as string
+const accessTokenSecret = process.env.TOKEN_KEY as string
 import { verifyToken } from '../helpers/auth.helper'
 
 declare global {
@@ -7,6 +7,7 @@ declare global {
         interface Request {
             user: object,
         }
+
     }
 }
 
@@ -16,7 +17,7 @@ let isAuth = async (req: Request, res: Response, next: NextFunction) => {
         token = token.replace(/^Bearer\s+/, "")
         try {
             const decoded = await verifyToken(token, accessTokenSecret);
-            req.user = decoded as object
+            req.user = decoded
             next()
         } catch (error) {
             return res.status(403).json({
