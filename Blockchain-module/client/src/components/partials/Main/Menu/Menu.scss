@@ -22,6 +22,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        margin-left: 1rem;
 
         .img-logo-menu {
             width: 80px;
@@ -135,6 +136,10 @@
         text-decoration: none;
     }
 
+    .logo-app {
+        margin-left: .2rem;
+    }
+
     .logo-menu {
         width: 100%;
         .icon-menu {
@@ -173,5 +178,11 @@
     .menu-component {
         position: absolute;
         z-index: 200;
+    }
+}
+
+@media screen and (max-height: 620px) {
+    .bottom-item {
+        margin-top: 0 !important;
     }
 }

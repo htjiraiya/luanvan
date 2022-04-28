@@ -1,0 +1,22 @@
+.add-transaction-wrapper {
+    width: 30rem;
+
+    .form-add-transaction {
+        width: 100%;
+
+        .image-transaction-review {
+            width: 25rem;
+            height: 20rem;
+            background-color: #efefef;
+            border-radius: 7px;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 90%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

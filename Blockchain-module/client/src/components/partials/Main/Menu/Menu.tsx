@@ -180,14 +180,15 @@ const Menu = () => {
                     <span className='text-function'>Biểu đồ sản lượng lúa</span>
                 </div>
             </Link>
-
-            <div
-                className="item-function bottom-item"
-                onClick={() => handleLogout()}
-            >
-                <i className="fa-solid fa-right-from-bracket custom-icon text-danger"></i>
-                <span className='text-function text-danger'>Đăng xuất</span>
-            </div>
+            <Link to="/" className='bottom-item'>
+                <div
+                    className="item-function"
+                    onClick={() => handleLogout()}
+                >
+                    <i className="fa-solid fa-right-from-bracket custom-icon text-danger"></i>
+                    <span className='text-function text-danger'>Đăng xuất</span>
+                </div>
+            </Link>
         </div>
     );
 };

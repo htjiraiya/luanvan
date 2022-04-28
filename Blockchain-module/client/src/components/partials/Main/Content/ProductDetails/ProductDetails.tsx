@@ -1,7 +1,8 @@
 import React from 'react';
 import './ProductDetail.scss'
-import Header from './header/Header'
 import Detail from './detail/Detail';
+import Header from './header/Header';
+
 
 function ProductDetails() {
     return (

@@ -21,11 +21,11 @@ const OptionsChart = (props: propsObj) => {
         { value: 1, label: 'Cá nhân' }
     );
 
-    const [currentTimeOption, setCurrentTimeOption] = useState(
+    const [currentTypeTimeOption, setCurrentTypeTimeOption] = useState(
         { value: 1, label: 'Tháng' }
     );
 
-    const [currentTypeOption, setCurrentTypeOption] = useState(
+    const [currentTimeOption, setCurrentTimeOption] = useState(
         { value: 1, label: 'Bar' }
     );
 
@@ -42,15 +42,14 @@ const OptionsChart = (props: propsObj) => {
         ];
     });
 
-    const [optionTime, setOptionTime] = useState(() => {
+    const [optionTypeTime, setOptionTypeTime] = useState(() => {
         return [
-            { value: 1, label: 'Theo Tháng' },
-            { value: 2, label: 'Theo mùa' },
-            { value: 3, label: 'Theo năm' },
+            { value: 1, label: 'Theo mùa trong năm' },
+            { value: 2, label: 'Theo mỗi 5 năm' },
         ];
     });
 
-    const [optionTypeChart, setOptionTypeChart] = useState(() => {
+    const [optionTimeOption, setOptionTimeOption] = useState(() => {
         return [
             { value: 1, label: 'Biểu đồ cột' },
             { value: 2, label: 'Biểu đồ đường' }
@@ -99,53 +98,40 @@ const OptionsChart = (props: propsObj) => {
         //set value
         setCurrentQuantityOption(newValue as selectOption);
 
+        handleChangeChart(newValue?.value);
+    }
+
+    const changeTypeTimeOption = (newValue: SingleValue<selectOption>) => {
+        setCurrentTypeTimeOption(newValue as selectOption);
+
         switch (newValue?.value) {
-            case 1:
-                setQuantityPeople([
-                    { value: 1, label: 'Biểu đồ cột' },
-                    { value: 2, label: 'Biểu đồ đường' }
-                ]);
+            case 1: {
+                let yearOptions:selectOption[] = [];
+                for (let index = 1; index <= 200; index ++) {
+                    yearOptions.push({value: index, label: `${2000 + index}`});
+                }
+                setOptionTimeOption(yearOptions);
                 break;
+            }
 
-            case 2:
-                // switch (currentTimeOption.value) {
-                //     case 1: {
-                //         let selectArr:selectOption[] = [];
-                //         for (let i = 0; i <= 50; i++) {
-                //             selectArr.push({value: 1, label: `${2000 + i}`});
-                //         }
-                //         setOptionTypeChart(selectArr);
-                //     }
-
-                //     case 2: {
-                //         let selectArr:selectOption[] = [];
-                //         for (let i = 0; i <= 50; i++) {
-                //             selectArr.push({value: 1, label: `${2000 + i}`});
-                //         }
-                //         setOptionTypeChart(selectArr);
-                //     }
-                // }
-                setQuantityPeople([
-                    { value: 1, label: 'Một hợp tác xã' },
-                    { value: 2, label: 'Nhiều hợp tác xã' }
-                ]);
+            case 2: {
+                let yearOptions:selectOption[] = [];
+                let index = 1;
+                let count = 5;
+                let currentYear = 2000;
+                while(count <= 200) {
+                    yearOptions.push({value: index, label: `${currentYear} - ${currentYear + count}`});
+                    count +=5;
+                    index ++;
+                };
+                setOptionTimeOption(yearOptions);
                 break;
-
-            default:
-                setQuantityPeople([
-                    { value: 1, label: 'Cá nhân' },
-                    { value: 2, label: 'Tập thể' }
-                ]);
+            }
         }
     }
 
     const changeTimeOption = (newValue: SingleValue<selectOption>) => {
         setCurrentTimeOption(newValue as selectOption);
-    }
-
-    const changeTypeChart = (newValue: SingleValue<selectOption>) => {
-        setCurrentTypeOption(newValue as selectOption);
-        handleChangeChart(newValue?.value);
     }
 
 
@@ -167,17 +153,17 @@ const OptionsChart = (props: propsObj) => {
             </div>
             <div className="select-element">
                 <Select
-                    options={optionTime}
+                    options={optionTypeTime}
                     placeholder={'Loại thời gian'}
-                    onChange={changeTimeOption}
+                    onChange={changeTypeTimeOption}
                 />
             </div>
             <div className="select-element">
                 <Select
                     //value={optionTypeChart}
-                    options={optionTypeChart}
+                    options={optionTimeOption}
                     placeholder={'Loại biểu đồ'}
-                    onChange={changeTypeChart}
+                    onChange={changeTimeOption}
                 />
             </div>
         </div>
