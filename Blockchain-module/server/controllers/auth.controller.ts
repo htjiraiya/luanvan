@@ -1,5 +1,5 @@
 import {Request, Response} from 'express'
-import { login as loginModel } from '../models/auth.models'
+import { login as loginModel } from '../models/auth.model'
 import { createToken } from '../helpers/auth.helper'
 import bcrypt from 'bcrypt'
 
