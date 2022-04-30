@@ -26,7 +26,7 @@ const TransactionItem = (props: propsObj) => {
                 Chờ xác nhận
             </div>
             <div className="control-content text-center">
-                <button className='btn btn-primary btn-responsive'>Cập nhật</button>
+                <button className='btn-circle btn-responsive'><i className="fa-solid fa-pen"></i></button>
             </div>
         </div>
     );

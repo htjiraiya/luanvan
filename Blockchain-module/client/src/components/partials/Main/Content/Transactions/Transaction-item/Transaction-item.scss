@@ -32,6 +32,18 @@
 
     .control-content {
         width: 7rem;
+
+        .btn-circle {
+            padding: 7px 12px;
+            border-radius: 50%;
+            border: 0;
+            background-color: #ffffff;
+            transition: 0.2s all ease;
+        }
+
+        .btn-circle:hover {
+            background-color: #efefef;
+        }
     }
 }
 

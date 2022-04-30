@@ -54,6 +54,15 @@ const Menu = () => {
             default:
                 handleClick(0);
         }
+
+        //set show or hide menu
+        if (($(window).width() as number) <= 820) {
+            setHideMenu(true);
+        } else {
+            setHideMenu(false)
+            const updateShowMenuAction = updateShowMenu(false);
+            dispatch(updateShowMenuAction);
+        }
     }, []);
 
     useEffect(() => {
@@ -100,15 +109,15 @@ const Menu = () => {
     }
 
     //----------------jquery--------------------//
-    $(window).resize(() => {
-        if (($(window).width() as number) <= 820) {
-            setHideMenu(true);
-        } else {
-            setHideMenu(false)
-            const updateShowMenuAction = updateShowMenu(false);
-            dispatch(updateShowMenuAction);
-        }
-    });
+    // $(window).resize(() => {
+    //     if (($(window).width() as number) <= 820) {
+    //         setHideMenu(true);
+    //     } else {
+    //         setHideMenu(false)
+    //         const updateShowMenuAction = updateShowMenu(false);
+    //         dispatch(updateShowMenuAction);
+    //     }
+    // });
 
     return (
         <div className={`menu-component ${hideMenu ? 'hide-menu' : ''}`}>

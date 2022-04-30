@@ -7,6 +7,8 @@
     flex-direction: column;
     box-shadow: 2px 0 20px #efefef;
     background-color: #ffffff;
+    position: absolute;
+    z-index: 200;
 
     ::-webkit-scrollbar {
         display: none;
@@ -174,12 +176,12 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .menu-component {
-        position: absolute;
-        z-index: 200;
-    }
-}
+// @media screen and (max-width: 1200px) {
+//     .menu-component {
+//         position: absolute;
+//         z-index: 200;
+//     }
+// }
 
 @media screen and (max-height: 620px) {
     .bottom-item {

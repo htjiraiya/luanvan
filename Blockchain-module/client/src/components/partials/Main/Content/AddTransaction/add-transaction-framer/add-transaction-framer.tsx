@@ -1,12 +1,19 @@
 import React, { ChangeEvent, useState } from 'react';
 import { FormGroup, Input, Label, Progress } from 'reactstrap';
+import Select from 'react-select';
 import "./add-transaction-framer.scss";
 
 const AddTransactionFramer = () => {
 
     //-------------------state-------------------//
-    const [imageTransaction, setImageTransaction] = useState(():File | null => null);
-    const [imageReviewTag, setImageReviewTag] = useState(():JSX.Element | null => null);
+    const [imageTransaction, setImageTransaction] = useState((): File | null => null);
+    const [imageReviewTag, setImageReviewTag] = useState((): JSX.Element | null => null);
+
+    const productOptions = [
+        { value: 1, label: '12345678' },
+        { value: 2, label: '12345678' },
+        { value: 3, label: '12345678' }
+    ];
 
     //-------------------handle-----------------//
     const handleChangeImageTransaction = (event: ChangeEvent) => {
@@ -16,7 +23,7 @@ const AddTransactionFramer = () => {
 
             fileReader.onload = (e: ProgressEvent) => {
                 const src = ((e.target) as FileReader).result;
-                setImageReviewTag(<img src={`${src}`}/>);
+                setImageReviewTag(<img src={`${src}`} />);
             }
 
             fileReader.readAsDataURL(targetEvent.files[0]);
@@ -43,13 +50,11 @@ const AddTransactionFramer = () => {
                 </FormGroup>
                 <FormGroup>
                     <Label for="quantity">
-                        Số lượng
+                        Lô hàng
                     </Label>
-                    <Input
-                        id="quantity"
-                        name="quantity"
-                        placeholder="Số lượng"
-                        type="text"
+                    <Select
+                        options={productOptions}
+                        placeholder={'chọn lô hàng'}
                     />
                 </FormGroup>
                 <FormGroup>
