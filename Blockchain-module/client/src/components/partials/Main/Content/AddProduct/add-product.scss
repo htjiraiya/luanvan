@@ -1,10 +1,10 @@
-.add-transaction-wrapper {
+.add-product-wrapper {
     width: 30rem;
 
-    .form-add-transaction {
+    .form-add-product {
         width: 100%;
 
-        .image-transaction-review {
+        .image-product-review {
             width: 25rem;
             height: 20rem;
             background-color: #efefef;
@@ -19,9 +19,4 @@
             }
         }
     }
-}
-
-.is-invalid {
-    border-radius: 5px;
-    border: 1px solid red !important;
 }
