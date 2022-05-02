@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,57 +12,73 @@ import {
 } from 'chart.js';
 import { Bar, Line } from 'react-chartjs-2';
 import "./ChartContent.scss";
+import { data } from 'jquery';
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
-};
-
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+interface dataOption {
+  userOption: number
+  quantityOption: number
+  typeTimeOption: number
+  currentTimeOption: number
+}
 
 interface propsObj {
-  typeChart: number
+  option: dataOption
+}
+interface DataChartModel {
+  value: number,
+  label: string
 }
 
 const ChartContent = (props: propsObj) => {
-  const { typeChart } = props;
+  const { option } = props;
+  //-----------------state--------------------//
+  const [dataSource, setDataSource] = useState(():DataChartModel[] => []);
 
-  if (typeChart == 1) {
-    ChartJS.register(
-      CategoryScale,
-      LinearScale,
-      BarElement,
-      Title,
-      Tooltip,
-      Legend
-    );
-  } else {
-    ChartJS.register(
-      CategoryScale,
-      LinearScale,
-      PointElement,
-      LineElement,
-      Title,
-      Tooltip,
-      Legend
-    );
-  }
+  //-----------------lifecycle---------------//
+  useEffect(() => {
+    const data = [
+      {value: 100, label: 'Đông xuân'},
+      {value: 500, label: 'Hè thu'},
+      {value: 300, label: 'Thu đông'}
+    ]
+
+    setDataSource(data);
+  }, []);
+
+  useEffect(() => {
+    console.log(option);
+  }, [option])
+
+  //-----------------others------------------//
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+
+  const options = {
+    indexAxis: (1 == 1 ? 'x' as const : 'y' as const),
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Bar Chart',
+      },
+    },
+  };
 
   const data = {
-    labels,
+    labels: dataSource.map((element) => element.label),
     datasets: [
       {
         label: 'Dataset 1',
-        data: labels.map(() => (Math.random() * 1000)),
-        borderColor: typeChart == 1 ? 'none' : 'rgba(53, 162, 235, 0.5)',
+        data: dataSource.map(element => element.value),
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       }
     ],
@@ -71,7 +87,7 @@ const ChartContent = (props: propsObj) => {
   return (
     <div className='chart-container'>
       <div className="chart-responsive">
-        {typeChart == 1 ? <Bar options={options} data={data} /> : <Line options={options} data={data} />}
+      <Bar options={options} data={data} />
       </div>
     </div>
   );

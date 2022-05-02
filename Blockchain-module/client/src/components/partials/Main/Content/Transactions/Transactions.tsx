@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TransactionItem from './Transaction-item/Transaction-item';
 import "./Transactions.scss";
 
@@ -7,7 +8,7 @@ const Transactions = () => {
         <div className='main-container center'>
             <br />
             <h1>Giao dịch</h1>
-            <button className='btn btn-primary'>Thêm giao dịch</button>
+            <Link to='/main/add-transaction'  className='btn btn-primary'>Thêm giao dịch</Link>
             <div className='title-list-transaction'>
                 <div className="stt title-table text-center">
                     STT

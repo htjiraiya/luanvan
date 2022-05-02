@@ -54,6 +54,15 @@ const Menu = () => {
             default:
                 handleClick(0);
         }
+
+        //set show or hide menu
+        if (($(window).width() as number) <= 820) {
+            setHideMenu(true);
+        } else {
+            setHideMenu(false)
+            const updateShowMenuAction = updateShowMenu(false);
+            dispatch(updateShowMenuAction);
+        }
     }, []);
 
     useEffect(() => {
@@ -100,15 +109,15 @@ const Menu = () => {
     }
 
     //----------------jquery--------------------//
-    $(window).resize(() => {
-        if (($(window).width() as number) <= 820) {
-            setHideMenu(true);
-        } else {
-            setHideMenu(false)
-            const updateShowMenuAction = updateShowMenu(false);
-            dispatch(updateShowMenuAction);
-        }
-    });
+    // $(window).resize(() => {
+    //     if (($(window).width() as number) <= 820) {
+    //         setHideMenu(true);
+    //     } else {
+    //         setHideMenu(false)
+    //         const updateShowMenuAction = updateShowMenu(false);
+    //         dispatch(updateShowMenuAction);
+    //     }
+    // });
 
     return (
         <div className={`menu-component ${hideMenu ? 'hide-menu' : ''}`}>
@@ -180,14 +189,15 @@ const Menu = () => {
                     <span className='text-function'>Biểu đồ sản lượng lúa</span>
                 </div>
             </Link>
-
-            <div
-                className="item-function bottom-item"
-                onClick={() => handleLogout()}
-            >
-                <i className="fa-solid fa-right-from-bracket custom-icon text-danger"></i>
-                <span className='text-function text-danger'>Đăng xuất</span>
-            </div>
+            <Link to="/" className='bottom-item'>
+                <div
+                    className="item-function"
+                    onClick={() => handleLogout()}
+                >
+                    <i className="fa-solid fa-right-from-bracket custom-icon text-danger"></i>
+                    <span className='text-function text-danger'>Đăng xuất</span>
+                </div>
+            </Link>
         </div>
     );
 };

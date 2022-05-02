@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ProductItem from './Product-item/Product-item';
 import "./Products.scss";
 
@@ -7,7 +8,7 @@ const Products = () => {
         <div className='main-container center'>
             <br />
             <h1>Lô hàng</h1>
-            <br /><br />
+            <Link to='/main/add-product' className='btn btn-primary'>Thêm lô hàng</Link>
             <div className='title-list-transaction'>
                 <div className="stt title-table text-center">
                     STT

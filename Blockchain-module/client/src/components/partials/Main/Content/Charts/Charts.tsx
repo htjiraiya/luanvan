@@ -2,12 +2,26 @@ import React, { useState } from 'react';
 import ChartContent from './Chart/ChartContent';
 import OptionsChart from './Options-chart/Options-chart';
 
-
+interface dataOption {
+    userOption: number
+    quantityOption: number
+    typeTimeOption: number
+    currentTimeOption: number
+}
 const Charts = () => {
-    const [typeChart, setTypeChart] = useState(1);
+    //---------state---------//
+    const [option, setOption] = useState((): dataOption => {
+        return {
+            userOption: 1,
+            quantityOption: 1,
+            typeTimeOption: 1,
+            currentTimeOption: 1
+        }
+    })
 
-    const handleChangeChart = (value:number) => {
-        setTypeChart(value);
+    //---------handle--------//
+    const handleUpdateData = (value: dataOption) => {
+        setOption(value);
     }
 
     return (
@@ -15,9 +29,9 @@ const Charts = () => {
             <br />
             <h2>Biểu đồ sản lượng lúa</h2>
             <hr />
-            <OptionsChart handleChangeChart={handleChangeChart}/>
+            <OptionsChart UpdateData={handleUpdateData} />
             <hr />
-            <ChartContent typeChart={typeChart}/>
+            <ChartContent option={option} />
         </div>
     );
 };

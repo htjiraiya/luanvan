@@ -7,6 +7,8 @@
     flex-direction: column;
     box-shadow: 2px 0 20px #efefef;
     background-color: #ffffff;
+    position: absolute;
+    z-index: 200;
 
     ::-webkit-scrollbar {
         display: none;
@@ -22,6 +24,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        margin-left: 1rem;
 
         .img-logo-menu {
             width: 80px;
@@ -135,6 +138,10 @@
         text-decoration: none;
     }
 
+    .logo-app {
+        margin-left: .2rem;
+    }
+
     .logo-menu {
         width: 100%;
         .icon-menu {
@@ -169,9 +176,15 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
-    .menu-component {
-        position: absolute;
-        z-index: 200;
+// @media screen and (max-width: 1200px) {
+//     .menu-component {
+//         position: absolute;
+//         z-index: 200;
+//     }
+// }
+
+@media screen and (max-height: 620px) {
+    .bottom-item {
+        margin-top: 0 !important;
     }
 }

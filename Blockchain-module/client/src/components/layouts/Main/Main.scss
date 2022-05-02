@@ -1,11 +1,12 @@
 .main-component {
     width: 100%;
-    display: flex;
+    display: block;
+    position: relative;
 }
 
-@media screen and (max-width: 1200px) {
-    .main-component {
-        display: block;
-        position: relative;
-    }
-}
+// @media screen and (max-width: 1200px) {
+//     .main-component {
+//         display: block;
+//         position: relative;
+//     }
+// }
