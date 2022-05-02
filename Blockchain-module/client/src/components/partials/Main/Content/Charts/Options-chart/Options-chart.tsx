@@ -3,14 +3,14 @@ import "./Options-chart.scss";
 import Select, { SingleValue } from 'react-select';
 
 interface propsObj {
-    handleChangeChart: Function
+    UpdateData: Function
 }
 
 interface selectOption { value: number, label: string };
 
 const OptionsChart = (props: propsObj) => {
     //---------props----------//
-    const { handleChangeChart } = props;
+    const { UpdateData } = props;
 
     //----------state---------//
     const [currentUserOption, setCurrentUserOption] = useState(
@@ -92,13 +92,15 @@ const OptionsChart = (props: propsObj) => {
                     { value: 2, label: 'Tập thể' }
                 ]);
         }
+
+        submitData();
     }
 
     const changeQuantityOption = (newValue: SingleValue<selectOption>) => {
         //set value
         setCurrentQuantityOption(newValue as selectOption);
 
-        handleChangeChart(newValue?.value);
+        submitData();
     }
 
     const changeTypeTimeOption = (newValue: SingleValue<selectOption>) => {
@@ -128,10 +130,24 @@ const OptionsChart = (props: propsObj) => {
                 break;
             }
         }
+
+        submitData();
     }
 
     const changeTimeOption = (newValue: SingleValue<selectOption>) => {
         setCurrentTimeOption(newValue as selectOption);
+        submitData();
+    }
+
+    const submitData = () => {
+        const data = {
+            userOption: currentUserOption.value,
+            quantityOption: currentQuantityOption.value,
+            typeTimeOption: currentTypeTimeOption.value,
+            currentTimeOption: currentTimeOption.value
+        }
+
+        UpdateData(data);
     }
 
 
