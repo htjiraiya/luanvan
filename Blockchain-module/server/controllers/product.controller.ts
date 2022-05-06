@@ -9,11 +9,11 @@ import {
 
 const getAll = async (req: Request, res: Response) => {
 
-    const limit = parseInt(req.query.limit as string)
-    const offset = parseInt(req.query.offset as string)
+    const limit = Number(req.query.limit as string)
+    const offset = Number(req.query.offset as string)
 
     try {
-        const products = await getAllModel(limit, offset) as any
+        const products = await getAllModel(limit, offset)
         return res.status(200).json({
             message: 'Lấy dữ liệu thành công.',
             data: products
@@ -63,7 +63,7 @@ const getActivityByDate = async (req: Request, res: Response) => {
                 message: 'Dữ liệu không được thành lập.'
             })
 
-        const activity = await getActivityByDateModel(parseInt(id as string), date as string)
+        const activity = await getActivityByDateModel(Number(id as string), date as string)
 
         if(activity) {
             return res.status(200).json({
