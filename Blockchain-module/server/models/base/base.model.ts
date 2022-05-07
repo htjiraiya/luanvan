@@ -11,6 +11,20 @@ interface Product {
     status: number
 }
 
+interface TransactionDataModel {
+    cooperateId: number,
+    productId: number,
+    buyerId: number,
+    cooperateDate: string,
+    transactionNumber: number,
+    image?: string,
+    status: string,
+    status_HTX: string,
+    status_buyer: string
+}
+
+
 export {
-    Product
+    Product,
+    TransactionDataModel
 }
