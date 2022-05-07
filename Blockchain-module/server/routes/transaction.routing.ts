@@ -1,16 +1,11 @@
 import express from 'express';
-import {
-    getAll,
-    getById,
-    create,
-    update
-} from '../controllers/transaction.controller'
+import TransactionController from '../controllers/transaction.controller'
 
 const route = express.Router()
 
-route.get('/', getAll)
-route.get('/:id', getById)
-route.post('/', create)
-route.put('/', update)
+route.get('/', TransactionController.getAll)
+route.get('/:id', TransactionController.getById)
+route.post('/', TransactionController.create)
+route.put('/', TransactionController.update)
 
 export default route
