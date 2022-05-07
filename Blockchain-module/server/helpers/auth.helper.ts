@@ -1,13 +1,13 @@
 import jwt from 'jsonwebtoken'
 
 interface User {
-    email: string
+    username: string
 }
 
 let createToken = (user: User, token_key: string, expire: string):Promise<any> => {
     return new Promise((resolve, reject) => {
         jwt.sign(
-            { email: user.email },
+            { username: user.username },
             token_key,
             {
                 algorithm: "HS256",

@@ -1,17 +1,12 @@
 import express from 'express'
-import { 
-    getAll,
-    getActivityByDate,
-    getById,
-    create,
- } from '../controllers/product.controller'
+import ProductController from '../controllers/product.controller'
 
 const route = express.Router()
 
-route.get('/', getAll)
-route.get('/:id', getById)
-route.get('/activity/', getActivityByDate)
-route.post('/', create)
+route.get('/', ProductController.getAll)
+route.get('/:id', ProductController.getById)
+route.get('/activity/', ProductController.getActivityByDate)
+route.post('/', ProductController.create)
 
 
 export default route
