@@ -5,21 +5,25 @@ import cors from "cors";
 import { connect } from "./config/database";
 import route from './routes/index'
 
-//--------------config-----------------//
-const app = express();
-dotenv.config();
+try {
+    //--------------config-----------------//
+    const app = express();
+    dotenv.config();
 
-app.use(cors());
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+    app.use(cors());
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json());
 
-//------------route------------//
-route(app)
+    //------------route------------//
+    route(app)
 
-//--------------listen-------------------------//
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-    console.log('OK. App listening on port: ' + PORT);
-});
+    //--------------listen-------------------------//
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, () => {
+        console.log('OK. App listening on port: ' + PORT);
+    });
 
-connect();
+    connect();
+} catch (err) {
+    throw err
+}
