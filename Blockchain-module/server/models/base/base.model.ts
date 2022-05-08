@@ -11,7 +11,7 @@ interface Product {
 }
 
 interface TransactionDataModel {
-    cooperateId: number,
+    cooperateId?: number,
     productId: number,
     buyerId: number,
     cooperateDate: string,

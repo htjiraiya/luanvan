@@ -45,6 +45,29 @@ class ProductModel {
             })
         })
     }
+
+    getProductYetTransactionByFramerId = (framerId: number): Promise<{productId: number, productName: string}[]> => {
+        return new Promise((resolve, reject) => {
+            const sql = `SELECT a.id_lohang, a.name_lohang
+            FROM tbl_lohang as a
+            WHERE a.id_lohang <> ALL (SELECT id_lohang
+                                  FROM tbl_giaodich)
+            AND a.id_xavien = ${framerId}`
+
+            connection.query(sql, (error, result) => {
+                if (error) {
+                    reject(error)
+                } else {
+                    const listProducts = JSON.parse(JSON.stringify(result))
+                        .map((element: {id_lohang: number, name_lohang: string}) => {
+                            return {productId: element.id_lohang, productName: element.name_lohang}
+                        })
+                    
+                    resolve(listProducts)
+                }
+            })
+        })
+    }
 }
 
 

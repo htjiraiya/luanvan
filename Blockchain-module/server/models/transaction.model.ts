@@ -43,7 +43,6 @@ export default new class TransactionModel {
             const createAt = this.getCurrentTime()
 
             const sql = `INSERT INTO tbl_giaodich (
-                id_giaodich, 
                 id_lohang, 
                 id_thuonglai, 
                 date_giaodich, 
@@ -55,7 +54,6 @@ export default new class TransactionModel {
                 created_at, 
                 updated_at
             ) VALUES (
-                '${transaction.cooperateId}', 
                 '${transaction.productId}', 
                 '${transaction.buyerId}', 
                 '${transaction.cooperateDate}', 
