@@ -1,12 +1,7 @@
 import axios, { Axios, AxiosRequestHeaders, Method } from 'axios'
+import ResponseAPIType from './base/base.service'
 
-type ResponseAPIType = {
-    timeout?: number
-    status?: number
-    data?: any,
-    message?: string,
-    err?: any
-}
+
 
 export default new class ConfigService {
     axios = axios
