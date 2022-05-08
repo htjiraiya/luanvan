@@ -7,7 +7,7 @@ export default new class ConfigService {
         this.axios.defaults.baseURL = 'http://localhost:8000/api'
     }
 
-    getAPI(method: string, url: string, data: string|null = null, token: string | null = null) {
+    getAPI(method: string, url: string, data: any|null = null, token: string | null = null) {
         return this.axios.request({
             method: method as Method,
             url: url,

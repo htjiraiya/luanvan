@@ -23,26 +23,32 @@ const AddTransactionFramer = () => {
     const [validDateTransaction, setValidDateTransaction] = useState(true);
     const [validImageTransaction, setValidImageTransaction] = useState(true);
 
-    const [buyerOptions, setBuyerOptions] = useState(():SelectOption[] => [])
+    const [buyerOptions, setBuyerOptions] = useState((): SelectOption[] => [])
 
-    const productOptions = [
-        { value: 1, label: '12345678' },
-        { value: 2, label: '12345678' },
-        { value: 3, label: '12345678' }
-    ];
+    const [productOptions, setProductOption] = useState((): SelectOption[] => [])
 
     //-----------------lifecycle----------------//
     useEffect(() => {
         (async function() {
+            //get data for buyer options
             //get data for input select
             const userId = 2
             //get buyers has contract with htx
-            const responseData = await transactionService.getBuyersByFramerId(userId);
+            const responseDataBuyers = await transactionService.getBuyersByFramerId(userId);
             //get products of user, product yet has transaction
-            const listOptions = responseData.map((element:{buyerId: number, fullNameBuyer: string}) => {
+            const listBuyerOptions = responseDataBuyers.map((element:{buyerId: number, fullNameBuyer: string}) => {
                 return { value: element.buyerId, label: element.fullNameBuyer }
             })
-            setBuyerOptions(listOptions)
+            setBuyerOptions(listBuyerOptions)
+
+            //get data for product options
+            //get buyers has contract with htx
+            const responseDataProducts = await transactionService.getProductYetTransactionByFramerId(userId);
+            //get products of user, product yet has transaction
+            const listProductsOptions = responseDataProducts.map((element:{productId: number, productName: string}) => {
+                return { value: element.productId, label: element.productName }
+            })
+            setProductOption(listProductsOptions)
         })()
     }, [])
 
@@ -101,9 +107,21 @@ const AddTransactionFramer = () => {
         validateProduct(product);
         validateDateTransaction(dateTransaction);
         validateImageTransaction(imageTransaction);
-
+        console.log('ohhh noo')
         if (!validBuyer || !validDateTransaction || !validImageTransaction
-            || validProduct) return;
+            || !validProduct) return;
+
+        console.log('ohhh noo')
+
+        const cooperateId = (new Date()).getTime()
+        const formData = new FormData()
+        formData.append('productId', `${product}`)
+        formData.append('buyerId', `${buyer}`)
+        formData.append('cooperateDate', dateTransaction)
+        formData.append('transactionNumber', `${cooperateId}`)
+        formData.append('image', imageTransaction as File, imageTransaction?.name as string)
+
+        transactionService.addTransaction(formData)
     }
 
     //validate
