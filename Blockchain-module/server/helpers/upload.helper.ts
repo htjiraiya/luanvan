@@ -1,4 +1,7 @@
 import multer, { StorageEngine } from "multer";
+import { UploadFileCallBackType } from "./base/base.helper";
+import {Request} from 'express'
+
 
 export default class UploadHelper {
     storage: StorageEngine
@@ -6,10 +9,10 @@ export default class UploadHelper {
 
     constructor(folder: string = '') {
         this.storage = multer.diskStorage({
-            destination: function (req: any, file: any, cb: any) {
+            destination: function (req: Request, file: Express.Multer.File, cb: UploadFileCallBackType){
                 cb(null, `public/${folder}`)
             },
-            filename: function (req: any, file: any, cb: any) {
+            filename: function (req: Request, file: Express.Multer.File, cb: UploadFileCallBackType) {
                 cb(null, Date.now() + '-' + file.originalname)
             }
         })

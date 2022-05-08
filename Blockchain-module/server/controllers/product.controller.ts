@@ -82,16 +82,16 @@ class ProductController {
 
     create = async (req: Request, res: Response): Promise<Response> => {
         try {
-            const { productId, productName } = req.body
-            const { riceName, riceQuantity } = req.body
+            const { productName } = req.body
+            const { riceId, riceQuantity } = req.body
             const { logId, farmerId, harvestDate, image, status } = req.body
     
-            if (!productId || !productName)
+            if (!productName)
                 return res.status(401).json({
                     message: 'Dữ liệu không được thành lập.'
                 })
     
-            if (!riceQuantity || !riceName)
+            if (!riceQuantity || !riceId)
                 return res.status(401).json({
                     message: 'Dữ liệu không được thành lập.'
                 })
@@ -100,25 +100,27 @@ class ProductController {
                 return res.status(401).json({
                     message: 'Dữ liệu không được thành lập.'
                 })
-    
+                	
             const product = {
-                productId,
-                productName,
-                riceName,
-                riceQuantity,
-                logId,
-                farmerId,
-                harvestDate,
-                image,
-                status
+                name_lohang: productName,
+                id_gionglua: riceId,
+                soluong_lua: riceQuantity,
+                id_nhatkydongruong: logId,
+                id_xavien: farmerId,
+                date_thuhoach: harvestDate,
+                image_lohang: image,
+                status_lohang: status
             }
     
-            const isAddition = await ProductModel.create(product)
+            const insertId = await ProductModel.create(product)
     
-            if (isAddition) {
+            if (insertId) {
                 return res.status(200).json({
                     message: 'Thêm dữ liệu thành công.',
-                    data: product
+                    data: {
+                        productId: insertId,
+                        ...product
+                    }
                 })
             }
     
