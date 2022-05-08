@@ -1,5 +1,13 @@
 import axios, { Axios, AxiosRequestHeaders, Method } from 'axios'
 
+type ResponseAPIType = {
+    timeout?: number
+    status?: number
+    data?: any,
+    message?: string,
+    err?: any
+}
+
 export default new class ConfigService {
     axios = axios
 
@@ -19,14 +27,14 @@ export default new class ConfigService {
                     timeout: 1,
                     status: res.status,
                     data: res.data
-                }
+                } as ResponseAPIType 
             })
             .catch(err => {
                 return {
                     status: err.response.status,
                     message: 'Errors happened!',
                     err
-                }
+                } as ResponseAPIType 
             })
     }
 }

@@ -21,13 +21,33 @@ class ProductModel {
 
     getById = (id: number): Promise<any> => {
         return new Promise((resolve, reject) => {
-            resolve(true)
+            
+            const query = `SELECT *
+                           FROM tbl_lohang 
+                           WHERE id_lohang = ?
+                           `
+
+            connection.query(query, [id], (err, result)=>{
+                if(err) {
+                    reject(err)
+                }else {
+                    if(result.length > 0) {
+                        resolve(result[0])
+                    }else{
+                        resolve(null)
+                    }
+                }
+            })
         })
     }
 
     getActivityByDate = (id: number, date: string): Promise<any> => {
         return new Promise((resolve, reject) => {
-            resolve(true)
+            
+            const query = `SELECT *
+                           FROM tbl_lohang
+                           `
+
         })
     }
 
