@@ -1,8 +1,8 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { FormFeedback, FormGroup, Input, Label } from 'reactstrap';
 import Select, { SingleValue } from 'react-select';
 import "./add-transaction-framer.scss";
-import { borderColor } from '@mui/system';
+import transactionService from '../../../../../../APIs/transaction.service';
 
 interface SelectOption {
     value: number,
@@ -12,7 +12,7 @@ interface SelectOption {
 const AddTransactionFramer = () => {
 
     //-------------------state-------------------//
-    const [buyer, setBuyer] = useState('');
+    const [buyer, setBuyer] = useState((): number | null => null);
     const [product, setProduct] = useState((): number | null => null);
     const [dateTransaction, setDateTransaction] = useState('');
     const [imageTransaction, setImageTransaction] = useState((): File | null => null);
@@ -23,22 +23,39 @@ const AddTransactionFramer = () => {
     const [validDateTransaction, setValidDateTransaction] = useState(true);
     const [validImageTransaction, setValidImageTransaction] = useState(true);
 
+    const [buyerOptions, setBuyerOptions] = useState(():SelectOption[] => [])
+
     const productOptions = [
         { value: 1, label: '12345678' },
         { value: 2, label: '12345678' },
         { value: 3, label: '12345678' }
     ];
 
+    //-----------------lifecycle----------------//
+    useEffect(() => {
+        (async function() {
+            //get data for input select
+            const userId = 2
+            //get buyers has contract with htx
+            const responseData = await transactionService.getBuyersByFramerId(userId);
+            //get products of user, product yet has transaction
+            const listOptions = responseData.map((element:{buyerId: number, fullNameBuyer: string}) => {
+                return { value: element.buyerId, label: element.fullNameBuyer }
+            })
+            setBuyerOptions(listOptions)
+        })()
+    }, [])
+
     //-------------------handle-----------------//
 
     //handle input change
-    const handleChangeBuyer = (event: ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value;
+    const handleChangeBuyer = (newValue: SingleValue<SelectOption>) => {
+        const valueSelect = newValue as SelectOption;
 
         //validate
-        validateBuyer(value);
+        validateBuyer(valueSelect.value);
 
-        setBuyer(value);
+        setBuyer(valueSelect.value);
     }
 
     const handleChangeProduct = (newValue: SingleValue<SelectOption>) => {
@@ -90,10 +107,9 @@ const AddTransactionFramer = () => {
     }
 
     //validate
-    const validateBuyer = (value: string) => {
-        console.log(value.length > 0);
+    const validateBuyer = (value: number | null) => {
         //require
-        if (value.length > 0) {
+        if (value != null) {
             setValidBuyer(true);
         } else {
             setValidBuyer(false);
@@ -161,17 +177,16 @@ const AddTransactionFramer = () => {
                     <Label for="buyer">
                         Thương lái
                     </Label>
-                    <Input
-                        invalid={!validBuyer}
-                        onChange={(e) => handleChangeBuyer(e)}
-                        id="buyer"
-                        name="buyer"
-                        placeholder="Thương lái"
-                        type="text"
+                    <Select
+                        styles={customStyles}
+                        onChange={handleChangeBuyer}
+                        options={buyerOptions}
+                        placeholder={'chọn thương lái'}
                     />
-                    <FormFeedback>
-                        Xin hãy nhập trường thương lái
-                    </FormFeedback>
+                    {!validBuyer ?
+                        <div className='invalid-feedback show-text-error'>
+                            Xin hãy chọn thương lái
+                        </div> : ''}
                 </FormGroup>
                 <FormGroup>
                     <Label for="quantity">
@@ -184,9 +199,9 @@ const AddTransactionFramer = () => {
                         placeholder={'chọn lô hàng'}
                     />
                     {!validProduct ?
-                        <span className='text-danger'>
-                            Xin hãy chọn trường thương lái
-                        </span> : ''}
+                        <div className='invalid-feedback show-text-error'>
+                            Xin hãy chọn lô hàng
+                        </div> : ''}
                 </FormGroup>
                 <FormGroup>
                     <Label for="date-transaction">
