@@ -1,14 +1,13 @@
 
 interface Product {
-    productId: number
-    productName: string
-    riceName: string
-    riceQuantity: number
-    logId: number
-    farmerId: number
-    harvestDate: string
-    image?: string
-    status: number
+    name_lohang: string,
+    id_gionglua: number,
+    soluong_lua: number,
+    id_nhatkydongruong: number,
+    id_xavien: number,
+    date_thuhoach: string,
+    image_lohang: string,
+    status_lohang: string
 }
 
 export {

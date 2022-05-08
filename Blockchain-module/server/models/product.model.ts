@@ -35,7 +35,14 @@ class ProductModel {
 
         return new Promise((resolve, reject) => {
 
-            resolve(true)
+            const insertion = `INSERT INTO tbl_lohang SET ?`
+
+            connection.query(insertion, product, (err, result) => {
+                if(err)
+                    reject(err)
+                else
+                    resolve(result.insertId)
+            })
         })
     }
 }
