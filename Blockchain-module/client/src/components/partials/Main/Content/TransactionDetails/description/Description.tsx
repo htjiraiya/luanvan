@@ -45,7 +45,8 @@ function Description() {
                         <p>Giống lúa: <span>Nàng thơm</span></p>
                         <p>Số lượng: <span>20 tấn</span></p>
                         <p>Giá: <span>20000/kg</span></p>
-                        <p>Ngày thu hoạch: <span>12-4-2022</span></p>
+                        <p>Ngày giao nhận: <span>12-4-2022</span></p>
+                        <p>Nơi giao nhận: <span>HTX Bình Minh</span></p>
                         <p>Diện tích đất: <span>20 ha</span></p>
                         <p>Mùa vụ: <span>Đông xuân</span></p>
                     </div>

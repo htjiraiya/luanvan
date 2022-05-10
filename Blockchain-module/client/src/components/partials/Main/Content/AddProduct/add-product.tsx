@@ -2,6 +2,7 @@ import Select, { SingleValue } from 'react-select';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { FormFeedback, FormGroup, Input, Label } from 'reactstrap';
 import './add-product.scss';
+import productService from '../../../../../APIs/product.service';
 
 interface SelectOption {
     value: number,
@@ -80,7 +81,7 @@ const AddProduct = () => {
         }
     }
 
-    const handleSubmitProduct = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmitProduct = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         validateNameProduct(nameProduct);
@@ -91,6 +92,19 @@ const AddProduct = () => {
 
         if (!validNameProduct || !validPriceProduct || !validLog 
             || !validDateHarvest || !validImageProduct) return;
+        
+        const product  = {
+            productName: nameProduct,
+            riceId: '',
+            riceQuantity: '',
+            logId: log,
+            farmerId: '',
+            harvestDate: dateHarvest,
+            image: imageProduct,
+            status: 0
+        }
+
+        const result = await productService.addProduct(product)
         
     }
 

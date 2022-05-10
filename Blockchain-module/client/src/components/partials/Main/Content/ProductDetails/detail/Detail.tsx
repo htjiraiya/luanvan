@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Table, Cell } from '../../../../features/table/Table'
 import './Detail.scss'
-import $ from 'jquery'
+import $, { cssNumber } from 'jquery'
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import productService from '../../../../../../APIs/product.service'
 
-function Detail() {
-    
+type PropsType = {
+    product: any
+}
+
+function Detail({ product }: PropsType) {
+
     const [activityDate, setActivityDate] = useState('')
 
+    const [activityDateList, setActivityDateList] = useState<[{dateTradition: string, dateFormat: string}]>()
+
     const handleClickToShow = (e: React.MouseEvent<HTMLElement>) => {
-        console.log(e.currentTarget)
-        //  e.currentTarget.classList.add('active')
         if (e.currentTarget) {
             let target = $(e.currentTarget)
             if (!target.hasClass('active')) {
@@ -26,14 +31,32 @@ function Detail() {
         }
     }
 
-    const handleChangeActivityDate = (e: SelectChangeEvent)=> {
+    const handleChangeActivityDate = (e: SelectChangeEvent) => {
+
+        console.log(e.target.value)
         setActivityDate(e.target.value)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         $('.product-detail .detail-content').slideUp('.5s');
         $('.product-detail .generate-detail-item .fa-chevron-left').css('transform', 'rotateZ(-90deg)')
-    } ,[])
+    }, [])
+
+    useEffect(() => {
+        (async()=> {
+            const result = await productService.getActivityDateByFarmerId(2)
+            if(result && result.status === 200) {
+                setActivityDateList(result.data.data)
+                console.log(result.data.data)
+            }
+        })()
+    }, [])
+
+    const activityDateOptions = activityDateList?.map((value, index) => {
+        return (
+            <MenuItem key={index} value={value.dateTradition}>{value.dateFormat}</MenuItem>
+       )
+    })
 
     return (
         <div className="product-detail">
@@ -48,13 +71,11 @@ function Detail() {
                         <i className="fa-solid fa-chevron-left"></i>
                     </div>
                     <div className="detail-content detail-content-flex">
-                        <p>Giống lúa: <span>Nàng thơm</span></p>
-                        <p>Số lượng: <span>20 tấn</span></p>
-                        <p>Giá: <span>20000/kg</span></p>
-                        <p>Thời gian giao nhận: <span>4h 22-4-2022</span></p>
-                        <p>Nơi giao nhận: <span>HTX Bình Minh</span></p>
+                        <p>Giống lúa: <span>{product.name_gionglua}</span></p>
+                        <p>Số lượng: <span>{product.soluong_lua} tấn</span></p>
+                        <p>Ngày thu hoạch: <span>{product.date_thuhoach}</span></p>
                         <p>Nơi sản xuất: <span>HTX Bình Minh</span></p>
-                        <p>Mùa vụ: <span>Đông xuân</span></p>
+                        <p>Mùa vụ: <span>{product.name_lichmuavu}</span></p>
                     </div>
                 </div>
                 <div className="generate-item-wrapper">
@@ -66,12 +87,15 @@ function Detail() {
                         <i className="fa-solid fa-chevron-left"></i>
                     </div>
                     <div className="detail-content">
-                        <p>1. <span>Phân bón hữu cơ ADC, 10 bao, 20000vnd/bao</span></p>
-                        <p>2. <span>Phân bón vi sinh ADC, 10 bao, 200000vnd/bao</span></p>
-                        <p>3. <span>Phân bón đạm ADC, 10 bao, 200000vnd/bao</span></p>
-                        <p>4. <span>Phân bón  ADC, 10 bao, 200000vnd/bao</span></p>
-                        <p>5. <span>Thuốc trừ sâu ADC, 10 bao, 200000vnd/bao</span></p>
-                        <p>6. <span>Thuốc trừ cỏ ADC, 10 bao, 200000vnd/bao</span></p>
+                        {product.thuocbaovethucvat?.map((value: any, index: any) => {
+                            return (
+                                <p key={index}>
+                                    {index + 1}. <span>{`${value.name_thuocbaovethucvat}, 
+                                            ${value.price_thuocbaovethucvat} VND, 
+                                            Số lượng: ${value.qty_thuocbaovethucvat} ${value.unit_thuocbaovethucvat}`}</span>
+                                </p>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="generate-item-wrapper">
@@ -90,14 +114,14 @@ function Detail() {
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={activityDate}
-                                    style={{fontWeight: 'bold', height: '3rem'}}
+                                    style={{ fontWeight: 'bold', height: '3rem' }}
                                     label="Thời gian"
                                     onChange={handleChangeActivityDate}
-                                    
+
                                 >
-                                    <MenuItem value={10}>22-4-2022</MenuItem>
-                                    <MenuItem value={20}>22-5-2022</MenuItem>
-                                    <MenuItem value={30}>22-6-2022</MenuItem>
+                                    { 
+                                        activityDateOptions
+                                    }
                                 </Select>
                             </FormControl>
                             <div className="activity-detail">
@@ -136,10 +160,10 @@ function Detail() {
                         <i className="fa-solid fa-chevron-left"></i>
                     </div>
                     <div className="detail-content">
-                        <p>Hộ sản xuất: <span>Ông Nguyen Văn C</span></p>
-                        <p>Địa chỉ: <span>Mạc Thiên Tích, phường Xuân Khánh, Ninh Kiều Cần Thơ</span></p>
-                        <p>Số điện thoại: <span>09393930549</span></p>
-                        <p>Email: <span>TL@gmail.com</span></p>
+                        <p>Hộ sản xuất: <span>{product.fullname_xavien}</span></p>
+                        <p>Địa chỉ: <span>{product.address_xavien}</span></p>
+                        <p>Số điện thoại: <span>{product.phone_number_xavien}</span></p>
+                        <p>Email: <span>{product.email_xavien}</span></p>
                     </div>
                 </div>
             </div>
