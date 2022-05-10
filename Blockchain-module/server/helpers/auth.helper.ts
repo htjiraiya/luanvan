@@ -1,10 +1,8 @@
 import jwt from 'jsonwebtoken'
+import  { UserType } from './base/base.helper'
 
-interface User {
-    username: string
-}
 
-let createToken = (user: User, token_key: string, expire: string):Promise<any> => {
+let createToken = (user: UserType, token_key: string, expire: string):Promise<any> => {
     return new Promise((resolve, reject) => {
         jwt.sign(
             { username: user.username },

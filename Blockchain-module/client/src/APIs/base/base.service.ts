@@ -1,10 +1,10 @@
 
 type ResponseAPIType = {
     timeout?: number
-    status?: number
+    status: number
     data?: any,
-    message?: string,
+    message: string,
     err?: any
 }
 
-export default ResponseAPIType
+export type { ResponseAPIType }

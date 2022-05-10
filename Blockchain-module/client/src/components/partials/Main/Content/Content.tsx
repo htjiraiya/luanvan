@@ -13,7 +13,6 @@ import TransactionDetails from './TransactionDetails/TransactionDetails';
 import NotFound from '../../../layouts/NotFound/NotFound';
 import AddTransactionFramer from './AddTransaction/add-transaction-framer/add-transaction-framer';
 import AddProduct from './AddProduct/add-product';
-import Footer from './Footer/Footer';
 
 const Content = () => {
     //-----Redux-----//
@@ -38,12 +37,11 @@ const Content = () => {
                 <Route path='/procedures' element={<Procedures/>}></Route>
                 <Route path='/charts' element={<Charts/>}></Route>
                 <Route path='/profile' element={<Profile/>}></Route>
-                <Route path='/product-details' element={<ProductDetails/>}></Route>
+                <Route path='/product-details/:id' element={<ProductDetails/>}></Route>
                 <Route path='/procedure-details' element={<Procedures/>}></Route>
-                <Route path='/transaction-details' element={<TransactionDetails/>}></Route>
+                <Route path='/transaction-details/:id' element={<TransactionDetails/>}></Route>
                 <Route path='*' element={<NotFound/>}></Route>
             </Routes>
-            <Footer/>
         </div>
     );
 };

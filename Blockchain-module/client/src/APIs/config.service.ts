@@ -1,5 +1,5 @@
 import axios, { Axios, AxiosRequestHeaders, Method } from 'axios'
-import ResponseAPIType from './base/base.service'
+import { ResponseAPIType } from './base/base.service'
 
 
 
