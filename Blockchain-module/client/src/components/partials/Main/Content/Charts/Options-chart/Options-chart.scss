@@ -1,0 +1,11 @@
+.options-chart {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .select-element {
+        width: 15rem;
+        margin-top: 1rem;
+    }
+}

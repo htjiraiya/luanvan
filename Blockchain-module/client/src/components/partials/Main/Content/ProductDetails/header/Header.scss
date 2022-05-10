@@ -1,0 +1,54 @@
+.product-header {
+    margin-top: 4rem;
+    p {
+        width: 100%;
+        text-align: center;
+    }
+    .name {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #444444;
+        text-transform: uppercase;
+    }
+    .number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #444444;
+    }
+    .status {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #444444;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .product-header {
+        .name {
+            font-size: 2.25rem;
+        }
+
+        .number {
+            font-size: 1.75rem;
+        }
+        .status {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product-header {
+        .name {
+            font-size: 2rem;
+        }
+
+        .number {
+            font-size: 1.75rem;
+        }
+        .status {
+            font-size: 1.25rem;
+        }
+    }
+}

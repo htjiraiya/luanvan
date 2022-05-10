@@ -1,0 +1,38 @@
+.main-container {
+    .name-product {
+        width: 15rem;
+    }
+
+    .quantity-product {
+        width: 7rem;
+    }
+
+    .date-product {
+        width: 9rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-container {
+        .date-product {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        .status {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main-container {
+        .quantity-product {
+            display: none;
+        }
+    }
+}

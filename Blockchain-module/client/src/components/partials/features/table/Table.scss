@@ -1,0 +1,18 @@
+.custom-table {
+    display: block;
+
+    .custom-row {
+        display: block;
+        width: 100%;
+        
+        .custom-column {
+            width: auto;
+            display: inline;
+            float: left;
+            height: 100%;
+            p {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
