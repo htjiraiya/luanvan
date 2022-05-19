@@ -13,8 +13,10 @@ export class XaVienService {
   }
 
   async findOne(data: object): Promise<tbl_xavien> {
-    return this.xavien.findOne({
-      where: { ...data },
-    });
+    return this.xavien
+      .findOne({
+        where: { ...data },
+      })
+      .then((t) => t?.get());
   }
 }

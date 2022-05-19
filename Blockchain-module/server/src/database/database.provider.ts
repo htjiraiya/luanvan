@@ -6,12 +6,12 @@ export const databaseProvider = [
     provide: 'SEQUELIZE',
     useFactory: async () => {
       const sequelize = new Sequelize({
-        host: 'localhost',
-        database: 'agriculture',
-        port: 3306,
+        host: process.env.DB_HOST,
+        database: process.env.DB_DATABASE,
+        port: Number(process.env.DB_PORT),
         dialect: 'mysql',
-        username: 'root',
-        password: '',
+        username: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
         models: [tbl_xavien],
       });
       console.log('DB connect successfully');
