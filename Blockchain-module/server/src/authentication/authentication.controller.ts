@@ -1,55 +1,59 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Res, UseGuards } from '@nestjs/common';
 import { ControllerConstant } from 'src/constant/api.constant';
 import { ResponseDTO } from '../dtos/response.dto';
 import { AuthenticationService } from './authentication.service';
-import { XaVienService } from '../xavien/xavien.service';
+import { JwtService } from '@nestjs/jwt';
+import { LocalAuthGuard } from './local-guard.guard';
 
 @Controller(ControllerConstant.authentication)
 export class AuthenticationController {
   constructor(
-    private xavienService: XaVienService,
     private authenticationService: AuthenticationService,
+    private jwtService: JwtService,
   ) {}
 
+  @UseGuards(LocalAuthGuard)
   @Post('/login')
   async login(
     @Body() account: { username: string; password: string },
+    @Res() res,
   ): Promise<ResponseDTO> {
     try {
+      console.log(process.env.SECRET_KEY);
       if (!account.username || !account.password) {
-        return {
+        return res.status(401).json({
           status: 401,
           message: 'Dữ liệu không được thành lập',
-        };
+        });
       }
 
-      const xavien = await this.xavienService.findOne({
-        username: account.username,
-      });
+      const xavien = await this.authenticationService.validateUser(
+        account.username,
+        account.password,
+      );
 
       if (xavien) {
-        if (account.password == xavien.password) {
-          return {
-            status: 200,
-            message: 'OK',
-            data: xavien,
-          };
-        }
-        return {
-          status: 401,
-          message: 'Dữ liệu không được thành lập',
+        const user = {
+          id: xavien.id_xavien,
         };
+        const token = await this.authenticationService.login(user);
+        return res.status(200).json({
+          status: 200,
+          data: {
+            token,
+          },
+        });
       }
-      return {
+      return res.status(401).json({
         status: 401,
         message: 'Dữ liệu không được thành lập',
-      };
+      });
     } catch (err) {
       console.log(err);
-      return {
+      return res.status(401).json({
         status: 500,
         message: 'Server error.',
-      };
+      });
     }
   }
 }

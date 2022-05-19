@@ -1,6 +1,7 @@
 const ControllerConstant = {
-  xavien: '/api/xavien',
   authentication: '/api/auth',
+  xavien: '/api/xavien',
+  thuonglai: '/api/thuonglai',
 };
 
 const MethodConstant = {
