@@ -3,6 +3,8 @@ const ControllerConstant = {
   xavien: '/api/xavien',
   thuonglai: '/api/thuonglai',
   thuocbaovethucvat: '/api/thuocbaovethucvat',
+  giaodich: '/api/giaodich',
+  lohang: '/api/lohang',
 };
 
 const MethodConstant = {
