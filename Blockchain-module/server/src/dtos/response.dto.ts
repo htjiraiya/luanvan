@@ -1,5 +1,5 @@
 export class ResponseDTO {
-  status: number;
+  statusCode: number;
   message: string;
   data?: any;
 }

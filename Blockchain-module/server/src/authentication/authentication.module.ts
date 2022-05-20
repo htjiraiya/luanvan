@@ -16,7 +16,7 @@ import { LocalStrategy } from './authentication-local.strategy';
       useFactory: () => {
         return {
           secret: process.env.SECRET_KEY,
-          signOptions: { expiresIn: '60s' },
+          signOptions: { expiresIn: '1h' },
         };
       },
     }),

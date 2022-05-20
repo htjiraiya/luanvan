@@ -19,10 +19,9 @@ export class AuthenticationController {
     @Res() res,
   ): Promise<ResponseDTO> {
     try {
-      console.log(process.env.SECRET_KEY);
       if (!account.username || !account.password) {
-        return res.status(401).json({
-          status: 401,
+        return res.status(400).json({
+          statusCode: 400,
           message: 'Dữ liệu không được thành lập',
         });
       }
@@ -35,23 +34,24 @@ export class AuthenticationController {
       if (xavien) {
         const user = {
           id: xavien.id_xavien,
+          username: xavien.username,
         };
         const token = await this.authenticationService.login(user);
         return res.status(200).json({
-          status: 200,
+          statusCode: 200,
           data: {
             token,
           },
         });
       }
       return res.status(401).json({
-        status: 401,
-        message: 'Dữ liệu không được thành lập',
+        statusCode: 400,
+        message: 'Không thể xác thực',
       });
     } catch (err) {
       console.log(err);
-      return res.status(401).json({
-        status: 500,
+      return res.status(500).json({
+        statusCode: 500,
         message: 'Server error.',
       });
     }
