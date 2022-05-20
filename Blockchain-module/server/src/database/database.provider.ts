@@ -1,5 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import { tbl_xavien } from '../xavien/xavien.entity';
+import { tbl_thuonglai } from '../thuonglai/thuonglai.entity';
+import { tbl_thuocbaovethucvat } from '../thuocbaovethucvat/thuocbaovethucvat.entity';
 
 export const databaseProvider = [
   {
@@ -12,7 +14,7 @@ export const databaseProvider = [
         dialect: 'mysql',
         username: process.env.DB_USERNAME,
         password: process.env.DB_PASSWORD,
-        models: [tbl_xavien],
+        models: [tbl_xavien, tbl_thuonglai, tbl_thuocbaovethucvat],
       });
       console.log('DB connect successfully');
       // await sequelize.sync();

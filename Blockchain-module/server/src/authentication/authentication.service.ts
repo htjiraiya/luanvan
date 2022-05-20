@@ -11,7 +11,6 @@ export class AuthenticationService {
 
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.xavienService.findOne({ username });
-    console.log(user);
     if (user && user.password === pass) {
       const { password, ...result } = user;
       return result;
@@ -20,7 +19,6 @@ export class AuthenticationService {
   }
 
   async login(user: any) {
-    const payload = { username: user.username };
-    return this.jwtService.sign(payload);
+    return this.jwtService.sign(user);
   }
 }
