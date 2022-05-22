@@ -17,4 +17,8 @@ export class LohangService {
       where: { ...data },
     });
   }
+
+  async create(data): Promise<tbl_lohang> {
+    return this.lohang.create(data).then((t) => t?.get());
+  }
 }

@@ -26,20 +26,23 @@ export class AuthenticationController {
         });
       }
 
-      const xavien = await this.authenticationService.validateUser(
+      const user = await this.authenticationService.validateUser(
         account.username,
         account.password,
       );
 
-      if (xavien) {
-        const user = {
-          id: xavien.id_xavien,
-          username: xavien.username,
+      if (user) {
+        const payload = {
+          id: user.id_xavien ? user.id_xavien : user.id_thuonglai,
+          role: user.id_xavien ? 0 : 1,
+          username: user.username,
         };
-        const token = await this.authenticationService.login(user);
+        const token = await this.authenticationService.login(payload);
         return res.status(200).json({
           statusCode: 200,
           data: {
+            id: payload.id,
+            role: payload.role,
             token,
           },
         });

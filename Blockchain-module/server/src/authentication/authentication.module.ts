@@ -7,10 +7,12 @@ import { XaVienModule } from '../xavien/xavien.module';
 import { AuthenticationStrategy } from './authentication.strategy';
 import { PassportModule } from '@nestjs/passport';
 import { LocalStrategy } from './authentication-local.strategy';
+import { ThuongLaiModule } from '../thuonglai/thuonglai.module';
 
 @Module({
   imports: [
     XaVienModule,
+    ThuongLaiModule,
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({
       useFactory: () => {

@@ -3,8 +3,10 @@ import { tbl_thuonglai } from './thuonglai.entity';
 
 @Injectable()
 export class ThuongLaiService {
-  @Inject('THUONGLAI_REPOSITORY')
-  private readonly thuonglai: typeof tbl_thuonglai;
+  constructor(
+    @Inject('THUONGLAI_REPOSITORY')
+    private readonly thuonglai: typeof tbl_thuonglai,
+  ) {}
 
   async findAll(): Promise<tbl_thuonglai[]> {
     return this.thuonglai.findAll<tbl_thuonglai>();
