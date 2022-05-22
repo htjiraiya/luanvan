@@ -6,5 +6,6 @@ import { ThuongLaiController } from './thuonglai.controller';
 @Module({
   controllers: [ThuongLaiController],
   providers: [...thuonglaiProvider, ThuongLaiService],
+  exports: [...thuonglaiProvider, ThuongLaiService],
 })
 export class ThuongLaiModule {}

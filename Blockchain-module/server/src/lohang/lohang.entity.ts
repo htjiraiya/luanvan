@@ -36,6 +36,9 @@ export class tbl_lohang extends Model {
   @Column
   status_lohang: string;
 
+  @Column
+  soluong_lua: number;
+
   @CreatedAt
   @Column
   created_at: Date;
