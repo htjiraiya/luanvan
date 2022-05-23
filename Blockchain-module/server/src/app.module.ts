@@ -7,6 +7,7 @@ import { ThuongLaiModule } from './thuonglai/thuonglai.module';
 import { ThuocbaovethucvatModule } from './thuocbaovethucvat/thuocbaovethucvat.module';
 import { GiaodichModule } from './giaodich/giaodich.module';
 import { LohangModule } from './lohang/lohang.module';
+import { HoptacxaModule } from './hoptacxa/hoptacxa.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { LohangModule } from './lohang/lohang.module';
     ThuocbaovethucvatModule,
     GiaodichModule,
     LohangModule,
+    HoptacxaModule,
   ],
 })
 export class AppModule {}
