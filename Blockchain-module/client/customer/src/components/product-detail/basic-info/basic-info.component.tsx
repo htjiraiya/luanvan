@@ -1,11 +1,12 @@
 import React from 'react'
 import './basic-info.component.scss'
+import Image from '../../common/image/image.component'
 
 function BasicInfoComponent() {
   return (
     <div className="pd-basic-info-wrapper">
       <div className="col col-1">
-        <img src="/images/extension/main.jpg" alt="" />
+        <Image src="/images/extension/main.jpg"></Image>
       </div>
       <div className="col col-2">
         <p className="name"> 

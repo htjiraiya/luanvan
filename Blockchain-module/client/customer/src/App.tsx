@@ -7,6 +7,7 @@ import NotFault from './pages/not-fault'
 import Main from './pages/main'
 import Product from './pages/product'
 import ProductDetail from './pages/product-detail'
+import SaleDetail from './pages/sale-detail'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Main></Main>}></Route>
         <Route path='/product' element={<Product></Product>}></Route>
         <Route path='/product-detail/:id' element={<ProductDetail></ProductDetail>}></Route>
+        <Route path='/sale-detail/:id' element={<SaleDetail></SaleDetail>}></Route>
         <Route path='/'></Route>
         <Route path='/'></Route>
         <Route path='*' element={<NotFault></NotFault>}></Route>

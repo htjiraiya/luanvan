@@ -12,7 +12,7 @@ function CardGroupComponent(): JSX.Element {
         <CardComponent 
           image="/images/extension/main.jpg"
         >
-          <h1 style={{fontSize: '1.5rem'}}>Title</h1>
+          <h1 style={{fontSize: '1.75rem'}}>Title</h1>
           <p>Noi dung</p>
           <p>Noi dung</p>
           <p>Noi dung</p>

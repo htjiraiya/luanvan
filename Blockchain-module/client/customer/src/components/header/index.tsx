@@ -8,7 +8,7 @@ function Index() {
       <div className="header">
         <div className="logo">
           <img className='image-logo' src="/images/logos/logo.svg" alt="" />
-          <p className='text-logo'>E-Agruculture</p>
+          <p className='text-logo'>E-Agriculture</p>
         </div>
         <div className="menu">
           <ul>

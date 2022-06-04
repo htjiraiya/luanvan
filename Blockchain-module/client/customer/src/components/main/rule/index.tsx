@@ -2,6 +2,7 @@ import React from 'react'
 import './style.scss'
 
 function Index() {
+  
   return (
     <div className="rule-wrapper">
       <div className="rule">
