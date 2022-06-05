@@ -97,3 +97,39 @@
         }
     }
 }
+
+@media screen and (max-width: 620px) {
+    .header-wrapper {
+        .header-col-1 {
+            .logo {
+                .text-logo-app {
+                    display: none;
+                }
+            }
+
+            .search {
+                width: calc(100% - 120px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header-wrapper {
+        .header-col-1 {
+            width: 100%;
+
+            .search {
+                width: calc(100% - 90px);
+            }
+        }
+
+        .header-col-2 {
+            width: 80px;
+            .QR {
+                display: none;
+            }
+        }
+    }
+}
+
