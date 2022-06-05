@@ -28,6 +28,10 @@ button {
     background-color: $color_app;
 }
 
+.format-link {
+    text-decoration: none;
+}
+
 .format-input {
     width: 100%;
     display: block;
@@ -36,4 +40,8 @@ button {
         background: #ffffff;
         border-radius: inherit;
     }
+}
+
+.text-justify {
+    text-align: justify;
 }
