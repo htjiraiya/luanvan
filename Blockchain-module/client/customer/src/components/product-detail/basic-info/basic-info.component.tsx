@@ -19,7 +19,7 @@ function BasicInfoComponent() {
           Giá bán: <span> 15000 &#8260; kg </span>
         </p>
         <p className="description">
-          Mô tả sản phẩm: <span>thường được sử dụng để làm
+            Mô tả sản phẩm: <span>thường được sử dụng để làm
             nguyên liệu cho món nếp cái hoa vàng-
             một đặc sản nổi tiếng, mang nhiều giá trị dinh
             dưỡng cho sức khỏe. Các loại gạo lứt nếp bao

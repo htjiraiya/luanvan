@@ -1,7 +1,7 @@
 import React from 'react'
+import BasicInfoComponent from '../../components/basic-info/basic-info.component'
 import TimelineItemComponent from '../../components/common/timeline/item/timeline-item.component'
 import TimelineComponent from '../../components/common/timeline/timeline.component'
-import BasicInfoComponent from '../../components/basic-info/basic-info.component'
 import { TimelineContentProps } from './props'
 import './style.scss'
 
@@ -30,7 +30,7 @@ const data = {
 
 function Index() {
     return (
-        <div className="sale-detail-wrapper">
+        <div className="procedure-detail-wrapper">
             <BasicInfoComponent></BasicInfoComponent>
             <div className="timeline">
                 <TimelineComponent>

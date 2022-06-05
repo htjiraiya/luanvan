@@ -1,17 +1,14 @@
-.pd-basic-info-wrapper {
+.basic-info-wrapper {
   width: 100%;
   display: flex;
-  justify-content: center;
   position: relative;
   top: 4rem;
   .col-1 {
-    width: 25rem;
-    height: 20rem;
-    margin-right: 1rem;
+    width: 40%;
   }
 
   .col-2 {
-    width: 50%;
+    width: 60%;
 
     p {
       font-size: 1.25rem;
