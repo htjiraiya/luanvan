@@ -7,7 +7,7 @@ function Index() {
       <div className="footer">
         <div className="column column-logo">
           <img src="/images/logos/logo.svg" alt="" />
-          <p className='text-logo'>E-Agruculture</p>
+          <p className='text-logo'>E-Agriculture</p>
         </div>
         <div className="column">
           <p>Sản phẩm</p>

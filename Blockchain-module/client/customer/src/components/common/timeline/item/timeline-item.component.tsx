@@ -8,6 +8,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent'
 import TimelineDot from '@mui/lab/TimelineDot'
 import GrassIcon from '@mui/icons-material/Grass'
 import { TimelineItemProps } from './timeline-item.props'
+import { Link } from 'react-router-dom'
 
 
 function TimelineItemComponent({children}: TimelineItemProps) {
@@ -43,9 +44,11 @@ function TimelineItemComponent({children}: TimelineItemProps) {
             <TimelineConnector sx={{backgroundColor: '#77ec62'}}/>
           </TimelineSeparator>
           <TimelineContent ref={timelineContentRef} sx={{ px: 2}}>
+            <Link to="/">
             <div ref={activityRef} className="timeline-activity">
               {children}
             </div>
+            </Link>
           </TimelineContent>
         </TimelineItem>
   )

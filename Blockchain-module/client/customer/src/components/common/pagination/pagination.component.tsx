@@ -1,4 +1,4 @@
-import { Pagination, Stack, Typography } from '@mui/material'
+import { Pagination, Stack } from '@mui/material'
 import React from 'react'
 import './pagination.component.scss'
 

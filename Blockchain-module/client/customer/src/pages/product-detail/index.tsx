@@ -2,34 +2,50 @@ import React from 'react'
 import TimelineItemComponent from '../../components/common/timeline/item/timeline-item.component'
 import TimelineComponent from '../../components/common/timeline/timeline.component'
 import BasicInfoComponent from '../../components/product-detail/basic-info/basic-info.component'
+import { TimelineContentProps } from './props'
 import './style.scss'
 
+const contentTimelineStyle: React.CSSProperties = {
+  fontWeight: 'bold',
+  fontSize: '1.25rem'
+}
+
+function TimelineContent({ data }: TimelineContentProps) {
+  return (
+    <>
+      <p >Tên giao dịch: <span style={contentTimelineStyle}>{data?.name_giaodich}</span></p>
+      <p >Người mua: <span style={contentTimelineStyle}>{data?.name_nguoimua}</span></p>
+      <p >Người bán: <span style={contentTimelineStyle}>{data?.name_nguoiban}</span></p>
+      <p >Số lượng: <span style={contentTimelineStyle}>{data?.soluong}kg</span></p>
+    </>
+  )
+}
+
+const data = {
+  name_giaodich: 'Giao dich dong xuan',
+  name_nguoiban: 'Nguyen Van An',
+  name_nguoimua: 'Nguyen Anh Hong',
+  soluong: 3000
+}
+
 function Index() {
+
   return (
     <div className="product-detail-wrapper">
-        <BasicInfoComponent></BasicInfoComponent>
-        <div className="timeline">
-          <TimelineComponent>
-            <TimelineItemComponent>
-              <p>Tên giao dịch: thu mua sản phẩm nàng thơm</p>
-              <p>Người mua:</p>
-              <p>Người bán: </p>
-              <p>Số lượng:</p>
-            </TimelineItemComponent>
-            <TimelineItemComponent>
-              <p>Tên giao dịch: mua sản phẩm lúa vụ đông xuân</p>
-              <p>Người mua:</p>
-              <p>Người bán: </p>
-              <p>Số lượng:</p>
-            </TimelineItemComponent>
-            <TimelineItemComponent>
-              <p>Tên giao dịch: mua giống lúa vụ đông xuân</p>
-              <p>Người mua:</p>
-              <p>Người bán: </p>
-              <p>Số lượng:</p>
-            </TimelineItemComponent>
-          </TimelineComponent>
-        </div>
+      <BasicInfoComponent></BasicInfoComponent>
+      <div className="timeline">
+        <TimelineComponent>
+          <TimelineItemComponent>
+            <TimelineContent data={data}/>
+          </TimelineItemComponent>
+          <TimelineItemComponent>
+            <TimelineContent data={data}/>
+          </TimelineItemComponent>
+          <TimelineItemComponent>
+            <TimelineContent data={data}/>
+          </TimelineItemComponent>
+        </TimelineComponent>
+      </div>
     </div>
   )
 }
