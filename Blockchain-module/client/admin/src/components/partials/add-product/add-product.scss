@@ -27,6 +27,14 @@
                 margin-right: 0;
             }
         }
+
+        .buttons-add-product {
+            display: flex;
+
+            .btn {
+                margin-right: 10px;
+            }
+        }
     }
 }
 
