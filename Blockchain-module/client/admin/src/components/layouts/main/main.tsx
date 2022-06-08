@@ -18,6 +18,9 @@ import NotFound from '../not-found/not-found';
 import Background from '../../partials/background/background';
 import Header from '../../partials/header/header';
 import './main.scss';
+import ConfirmProduct from '../../partials/confirm-product/confirm-product';
+import ConfirmTransaction from '../../partials/comfirm-transaction/confim-transaction';
+import QrBar from '../../partials/QR-Bar/qr-bar';
 
 const Main = () => {
     return (
@@ -29,12 +32,15 @@ const Main = () => {
                     <Routes>
                         <Route path='/dashboard' element={<Dashboard />}></Route>
                         <Route path='/products' element={<Products />}></Route>
+                        <Route path='/confirm-product' element={<ConfirmProduct />}></Route>
                         <Route path='/add-product' element={<AddProduct />}></Route>
                         <Route path='/product-details' element={<ProductDetails />}></Route>
                         <Route path='/transactions' element={<Transactions />}></Route>
+                        <Route path='/confirm-transaction' element={<ConfirmTransaction />}></Route>
                         <Route path='/add-transaction' element={<AddTransaction />}></Route>
                         <Route path='/transaction-details' element={<TransactionDetails />}></Route>
                         <Route path='/profile' element={<Profile />}></Route>
+                        <Route path='/qr-bar' element={<QrBar />}></Route>
                         <Route path='/' element={<Navigate to='/main/dashboard' />}></Route>
                         <Route path='/*' element={<NotFound />}></Route>
                     </Routes>
